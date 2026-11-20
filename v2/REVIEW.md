@@ -41,3 +41,11 @@ Pembetulan whisper: "ni support" → *knee support*, "bagian" → *bahagian*, "s
 
 - `hyperframes check`: 0 ralat. Amaran dikekalkan: tag harga/syiling hampir tepi kanan zon TikTok; klip 9 senyap; caption dalam satu fail.
 - Snapshot setiap babak disemak; intro di-crop semula supaya pejalan kaki di tengah dan muka tidak dilindungi tajuk/lencana.
+
+## Hasil render (diukur)
+
+- `v2/renders/knee-support-elastic-v2_1080x1920_60fps.mp4`: H.264 1080×1920, 60/1 fps, 33.60 s, AAC 48 kHz stereo 192 kb/s, **65.3 MB**.
+- VO vs asal: offset **0 sampel**, gain **0.9967 (−0.03 dB)** → selari & 100 %.
+- Loudness: VO −28.3 LUFS (short-term maks −26.7); stem SFX + footage −35.9 LUFS (short-term maks −35.7) ≈ 9 dB di bawah VO.
+- Frame dari fail render (0, 4.48 kilatan, 6.1, 11.9, 14.2, 17.07 kilatan, 18.6, 23.9, 26.0, 28.0, 33.58 CTA) disemak.
+- Bunyi diukur, bukan didengar.
