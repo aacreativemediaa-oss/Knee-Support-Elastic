@@ -1,0 +1,11 @@
+VO I=-29.0
+c01-walk L= -36.2 target=-56.0 gain=-19.8dB applied=-19.8dB vol=0.1023 result=-56.0
+c02-ankle L= -35.4 target=-56.0 gain=-20.6dB applied=-20.6dB vol=0.0933 result=-56.0
+c03-stand L= -41.6 target=-56.0 gain=-14.4dB applied=-14.4dB vol=0.1905 result=-56.0
+c04-reveal L= -18.3 target=-56.0 gain=-37.7dB applied=-37.7dB vol=0.0130 result=-56.0
+c05-wear L= -52.9 target=-56.0 gain=-3.1dB applied=-3.1dB vol=0.6998 result=-56.0
+c06-flex L= -55.4 target=-56.0 gain=-0.6dB applied=-0.6dB vol=0.9333 result=-56.0
+c07-move L= -35.0 target=-56.0 gain=-21.0dB applied=-21.0dB vol=0.0891 result=-56.0
+c08-fabric L= -52.7 target=-56.0 gain=-3.3dB applied=-3.3dB vol=0.6839 result=-56.0
+c09-size L= -65.0 target=-56.0 gain=+9.0dB applied=+9.0dB vol=2.8184 result=-56.0
+c10-cta L= -47.9 target=-56.0 gain=-8.1dB applied=-8.1dB vol=0.3936 result=-56.0
