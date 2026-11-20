@@ -1,0 +1,48 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    #sz-scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.35) 60%, rgba(0,0,0,.6)); }
+    #sz-size { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #sz-st { top: 290px; font-size: calc(150px * var(--k)); }
+    #sz-card { position: absolute; left: 150px; top: 410px; width: 780px; height: 790px; border-radius: 30px; overflow: hidden;
+      border: 8px solid #fff; box-shadow: 0 16px 0 rgba(0,0,0,.45); background: #fff; }
+    #sz-card img { width: 100%; height: 100%; objesz-fit: cover; display: block; }
+    #sz-price { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #sz-tag { position: absolute; left: 165px; top: 470px; width: 750px; height: 420px; }
+    #sz-tagbg { position: absolute; inset: 0; }
+    #sz-tagtx { position: absolute; left: 120px; right: 30px; top: 50px; text-align: center; }
+    #sz-p1 { font-size: calc(140px * var(--k)); color: #111; -webkit-text-stroke: 0; text-shadow: none; }
+    #sz-p2 { font-size: calc(250px * var(--k)); color: #e0161b; -webkit-text-stroke: 0; text-shadow: 0 6px 0 rgba(0,0,0,.25); }
+    .coin { position: absolute; width: 90px; height: 90px; }
+    #sz-cta { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #sz-g1 { top: 330px; font-size: calc(150px * var(--k)); }
+    #sz-sub { top: 500px; }
+    #sz-subi { display: inline-block; font-size: calc(52px * var(--k)); color: #111; background: #ffe600; padding: 12px 28px; border-radius: 14px; border: 6px solid #000; }
+    #sz-bag { position: absolute; left: 415px; top: 640px; width: 250px; height: 270px; }
+    #sz-arr { position: absolute; left: 80px; top: 1130px; width: 170px; height: 220px; }
+  </style>
+  <div id="root" data-composition-id="g-size" data-width="1080" data-height="1920">
+    <div id="sz-scrim" class="clip" data-start="0" data-duration="2.77" data-layout-ignore></div>
+    <!-- sizing chart (real chart from the brief) -->
+    <div id="sz-size" class="clip" data-start="0.05" data-duration="2.72">
+      <div id="sz-st" class="row t">Sizing <span class="y">chart</span></div>
+      <div id="sz-card"><img id="sz-img" src="assets/img/sizing-chart.jpg" alt="Sizing chart" /></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#sz-scrim", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0);
+    // sizing card rises in, holds, leaves before the price
+    tl.fromTo("#sz-st", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0.08);
+    tl.fromTo("#sz-card", { y: 700, rotation: 4 }, { y: 0, rotation: 0, duration: 0.55, ease: "expo.out" }, 0.05);
+    window.__timelines["g-size"] = tl;
+  </script>
+</template>

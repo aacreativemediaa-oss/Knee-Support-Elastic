@@ -1,0 +1,40 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    #pn-vig { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      background: radial-gradient(ellipse at 40% 70%, rgba(255,0,0,0) 38%, rgba(220,0,0,.55) 100%); }
+    .burst { position: absolute; width: 240px; height: 240px; }
+    #pn-b1 { left: 230px; top: 1290px; }
+    #pn-b2 { left: 370px; top: 1220px; }
+  </style>
+  <div id="root" data-composition-id="g-pain" data-width="1080" data-height="1920">
+    <div id="pn-vig" class="clip" data-start="1.5" data-duration="1.45" data-layout-ignore></div>
+    <div id="pn-w1" class="clip" data-start="1.58" data-duration="0.6" data-layout-ignore>
+      <svg id="pn-b1" class="burst" viewBox="0 0 240 240"><path d="M120 6 L142 82 L214 46 L168 112 L236 140 L160 150 L186 226 L122 170 L70 232 L80 156 L6 150 L66 108 L22 40 L96 78 Z" fill="#ff2d2d" stroke="#000" stroke-width="8" stroke-linejoin="round"/><path d="M120 60 L132 106 L176 94 L144 128 L170 166 L124 148 L100 186 L100 142 L60 132 L98 112 Z" fill="#ffe600"/></svg>
+    </div>
+    <div id="pn-w2" class="clip" data-start="2.32" data-duration="0.6" data-layout-ignore>
+      <svg id="pn-b2" class="burst" viewBox="0 0 240 240"><path d="M120 6 L142 82 L214 46 L168 112 L236 140 L160 150 L186 226 L122 170 L70 232 L80 156 L6 150 L66 108 L22 40 L96 78 Z" fill="#ff2d2d" stroke="#000" stroke-width="8" stroke-linejoin="round"/><path d="M120 60 L132 106 L176 94 L144 128 L170 166 L124 148 L100 186 L100 142 L60 132 L98 112 Z" fill="#ffe600"/></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // "injured" 6.06 / "terselioh" 6.80 (film time) → local 1.59 / 2.33
+    tl.fromTo("#pn-vig", { opacity: 0 }, { opacity: 1, duration: 0.08, ease: "none" }, 1.54);
+    tl.fromTo("#pn-vig", { opacity: 1 }, { opacity: 0.35, duration: 0.3, ease: "power2.out", immediateRender: false }, 1.64);
+    tl.fromTo("#pn-vig", { opacity: 0.35 }, { opacity: 1, duration: 0.08, ease: "none", immediateRender: false }, 2.28);
+    tl.fromTo("#pn-vig", { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power2.out", immediateRender: false }, 2.42);
+    tl.fromTo("#pn-b1", { scale: 0.2, rotation: -20, opacity: 1 }, { scale: 1, rotation: 0, duration: 0.18, ease: "back.out(2.5)" }, 1.58);
+    tl.fromTo("#pn-b1", { opacity: 1 }, { opacity: 0, scale: 1.2, duration: 0.2, ease: "power2.in", immediateRender: false }, 1.96);
+    tl.fromTo("#pn-b2", { scale: 0.2, rotation: 20, opacity: 1 }, { scale: 1, rotation: 0, duration: 0.18, ease: "back.out(2.5)" }, 2.32);
+    tl.fromTo("#pn-b2", { opacity: 1 }, { opacity: 0, scale: 1.2, duration: 0.2, ease: "power2.in", immediateRender: false }, 2.7);
+    window.__timelines["g-pain"] = tl;
+  </script>
+</template>

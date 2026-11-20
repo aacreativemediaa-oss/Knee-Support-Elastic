@@ -1,0 +1,52 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .cap { position: absolute; left: 0; width: 1080px; top: 1150px; text-align: center; overflow: visible; }
+    .cap .in { display: inline-block; font-family: "Anton", sans-serif; font-size: 60px; line-height: 1.15;
+      text-transform: uppercase; color: #fff; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill;
+      text-shadow: 0 5px 0 rgba(0,0,0,.55); }
+    .cap .w { display: inline-block; }
+    .cap .w.k { color: #39ff14; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1080" data-height="1920" data-layout-allow-caption-zone>
+    <div id="cap01" class="cap clip" data-start="1.58" data-duration="0.8"><div class="in" id="cap01i"><span id="cap01w0" class="w">ESPECIALLY</span> <span id="cap01w1" class="w">YANG</span></div></div>
+    <div id="cap02" class="cap clip" data-start="2.38" data-duration="0.72"><div class="in" id="cap02i"><span id="cap02w0" class="w">BADAN</span> <span id="cap02w1" class="w k">OVERWEIGHT</span> <span id="cap02w2" class="w">TU</span></div></div>
+    <div id="cap03" class="cap clip" data-start="3.1" data-duration="0.72"><div class="in" id="cap03i"><span id="cap03w0" class="w">KORANG</span> <span id="cap03w1" class="w">KENA</span></div></div>
+    <div id="cap04" class="cap clip" data-start="3.82" data-duration="0.66"><div class="in" id="cap04i"><span id="cap04w0" class="w k">HATI-HATI</span> <span id="cap04w1" class="w">TAU</span></div></div>
+    <div id="cap05" class="cap clip" data-start="4.48" data-duration="0.7"><div class="in" id="cap05i"><span id="cap05w0" class="w">SALAH</span> <span id="cap05w1" class="w">LANGKAH</span></div></div>
+    <div id="cap06" class="cap clip" data-start="5.18" data-duration="0.84"><div class="in" id="cap06i"><span id="cap06w0" class="w">SIKIT</span> <span id="cap06w1" class="w">PUN</span> <span id="cap06w2" class="w">BOLEH</span></div></div>
+    <div id="cap07" class="cap clip" data-start="6.02" data-duration="0.74"><div class="in" id="cap07i"><span id="cap07w0" class="w k">INJURED</span> <span id="cap07w1" class="w">ATAUPUN</span></div></div>
+    <div id="cap08" class="cap clip" data-start="6.76" data-duration="0.88"><div class="in" id="cap08i"><span id="cap08w0" class="w k">TERSELIOH</span> <span id="cap08w1" class="w">TAU</span></div></div>
+    <div id="cap09" class="cap clip" data-start="8.78" data-duration="0.56"><div class="in" id="cap09i"><span id="cap09w0" class="w">KORANG</span> <span id="cap09w1" class="w">PAKAI</span></div></div>
+    <div id="cap10" class="cap clip" data-start="9.34" data-duration="0.46"><div class="in" id="cap10i"><span id="cap10w0" class="w">JE</span> <span id="cap10w1" class="w k">KNEE</span> <span id="cap10w2" class="w k">SUPPORT</span></div></div>
+    <div id="cap11" class="cap clip" data-start="9.8" data-duration="0.78"><div class="in" id="cap11i"><span id="cap11w0" class="w">MACAM</span> <span id="cap11w1" class="w">NI</span></div></div>
+    <div id="cap12" class="cap clip" data-start="15.34" data-duration="0.6"><div class="in" id="cap12i"><span id="cap12w0" class="w">SO</span> <span id="cap12w1" class="w">SETIAP</span></div></div>
+    <div id="cap13" class="cap clip" data-start="15.94" data-duration="0.32"><div class="in" id="cap13i"><span id="cap13w0" class="w">KALI</span> <span id="cap13w1" class="w">KORANG</span></div></div>
+    <div id="cap14" class="cap clip" data-start="16.26" data-duration="0.76"><div class="in" id="cap14i"><span id="cap14w0" class="w k">BERGERAK</span> <span id="cap14w1" class="w">TU</span></div></div>
+    <div id="cap15" class="cap clip" data-start="18.22" data-duration="0.58"><div class="in" id="cap15i"><span id="cap15w0" class="w">RASA</span> <span id="cap15w1" class="w">LEBIH</span></div></div>
+    <div id="cap16" class="cap clip" data-start="18.8" data-duration="0.88"><div class="in" id="cap16i"><span id="cap16w0" class="w k">MELEKAP</span> <span id="cap16w1" class="w">TAU</span></div></div>
+    <div id="cap17" class="cap clip" data-start="28.54" data-duration="0.6"><div class="in" id="cap17i"><span id="cap17w0" class="w k">RUGI</span> <span id="cap17w1" class="w">KORANG</span></div></div>
+    <div id="cap18" class="cap clip" data-start="29.14" data-duration="0.78"><div class="in" id="cap18i"><span id="cap18w0" class="w">TAK</span> <span id="cap18w1" class="w k">GRAB</span> <span id="cap18w2" class="w">TERUS</span></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const groups = [{"id":"cap01","s":1.58,"words":[{"el":"#cap01w0","s":1.62,"k":false},{"el":"#cap01w1","s":2.1,"k":false}]},{"id":"cap02","s":2.38,"words":[{"el":"#cap02w0","s":2.42,"k":false},{"el":"#cap02w1","s":2.56,"k":true},{"el":"#cap02w2","s":2.74,"k":false}]},{"id":"cap03","s":3.1,"words":[{"el":"#cap03w0","s":3.14,"k":false},{"el":"#cap03w1","s":3.7,"k":false}]},{"id":"cap04","s":3.82,"words":[{"el":"#cap04w0","s":3.86,"k":true},{"el":"#cap04w1","s":4.2,"k":false}]},{"id":"cap05","s":4.48,"words":[{"el":"#cap05w0","s":4.52,"k":false},{"el":"#cap05w1","s":4.96,"k":false}]},{"id":"cap06","s":5.18,"words":[{"el":"#cap06w0","s":5.22,"k":false},{"el":"#cap06w1","s":5.46,"k":false},{"el":"#cap06w2","s":5.68,"k":false}]},{"id":"cap07","s":6.02,"words":[{"el":"#cap07w0","s":6.06,"k":true},{"el":"#cap07w1","s":6.32,"k":false}]},{"id":"cap08","s":6.76,"words":[{"el":"#cap08w0","s":6.8,"k":true},{"el":"#cap08w1","s":7.22,"k":false}]},{"id":"cap09","s":8.78,"words":[{"el":"#cap09w0","s":8.82,"k":false},{"el":"#cap09w1","s":9.16,"k":false}]},{"id":"cap10","s":9.34,"words":[{"el":"#cap10w0","s":9.38,"k":false},{"el":"#cap10w1","s":9.56,"k":true},{"el":"#cap10w2","s":9.68,"k":true}]},{"id":"cap11","s":9.8,"words":[{"el":"#cap11w0","s":9.84,"k":false},{"el":"#cap11w1","s":10.08,"k":false}]},{"id":"cap12","s":15.34,"words":[{"el":"#cap12w0","s":15.38,"k":false},{"el":"#cap12w1","s":15.72,"k":false}]},{"id":"cap13","s":15.94,"words":[{"el":"#cap13w0","s":15.98,"k":false},{"el":"#cap13w1","s":16.08,"k":false}]},{"id":"cap14","s":16.26,"words":[{"el":"#cap14w0","s":16.3,"k":true},{"el":"#cap14w1","s":16.6,"k":false}]},{"id":"cap15","s":18.22,"words":[{"el":"#cap15w0","s":18.26,"k":false},{"el":"#cap15w1","s":18.7,"k":false}]},{"id":"cap16","s":18.8,"words":[{"el":"#cap16w0","s":18.84,"k":true},{"el":"#cap16w1","s":19.28,"k":false}]},{"id":"cap17","s":28.54,"words":[{"el":"#cap17w0","s":28.58,"k":true},{"el":"#cap17w1","s":28.96,"k":false}]},{"id":"cap18","s":29.14,"words":[{"el":"#cap18w0","s":29.18,"k":false},{"el":"#cap18w1","s":29.26,"k":true},{"el":"#cap18w2","s":29.46,"k":false}]}];
+    groups.forEach((g) => {
+      tl.fromTo("#" + g.id + "i", { scale: 0.82, y: 10 }, { scale: 1, y: 0, duration: 0.16, ease: "back.out(2)", immediateRender: false }, g.s);
+      g.words.forEach((w, i) => {
+        // active word: yellow (keywords stay neon green and get a small pop)
+        if (w.k) {
+          tl.fromTo(w.el, { scale: 1 }, { scale: 1.12, duration: 0.08, ease: "power2.out", immediateRender: false }, w.s);
+          tl.to(w.el, { scale: 1, duration: 0.12, ease: "power2.in" }, w.s + 0.16);
+        } else {
+          tl.set(w.el, { color: "#ffe600" }, w.s);
+          const nx = g.words[i + 1];
+          if (nx) tl.set(w.el, { color: "#ffffff" }, nx.s);
+        }
+      });
+    });
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

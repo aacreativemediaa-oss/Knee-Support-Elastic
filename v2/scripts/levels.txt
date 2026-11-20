@@ -1,0 +1,11 @@
+VO I=-28.3
+c01-walk L= -22.1 target=-55.3 gain=-33.2dB applied=-33.2dB vol=0.0219 result=-55.3
+c02-sprain L= -37.7 target=-55.3 gain=-17.6dB applied=-17.6dB vol=0.1318 result=-55.3
+c03-reveal L= -16.7 target=-55.3 gain=-38.6dB applied=-38.6dB vol=0.0117 result=-55.3
+c04-wear L= -43.4 target=-55.3 gain=-11.9dB applied=-11.9dB vol=0.2541 result=-55.3
+c05-flex L= -54.7 target=-55.3 gain=-0.6dB applied=-0.6dB vol=0.9333 result=-55.3
+c06-move L= -38.5 target=-55.3 gain=-16.8dB applied=-16.8dB vol=0.1445 result=-55.3
+c07-snug L= -48.4 target=-55.3 gain=-6.9dB applied=-6.9dB vol=0.4519 result=-55.3
+c08-band L= -44.3 target=-55.3 gain=-11.0dB applied=-11.0dB vol=0.2818 result=-55.3
+c09-size L= -64.8 target=-55.3 gain=+9.5dB applied=+9.5dB vol=2.9854 result=-55.3
+c10-cta L= -39.6 target=-55.3 gain=-15.7dB applied=-15.7dB vol=0.1641 result=-55.3
