@@ -39,3 +39,11 @@ Pembetulan whisper: "injet" → *injured*, "jenis support" → *knee support*, "
 
 - `hyperframes check`: 0 ralat. Amaran: elemen di tepi zon selamat semasa animasi masuk (skala besar sementara), klip 9 senyap, caption dalam satu fail.
 - Snapshot setiap babak disemak.
+
+## Hasil render (diukur)
+
+- `v3/renders/knee-support-elastic-v3_1080x1920_60fps.mp4`: H.264 1080×1920, 60/1 fps, 36.00 s, AAC 48 kHz stereo 192 kb/s, **64.4 MB**.
+- VO vs asal: offset **0 sampel**, gain **0.9966 (−0.03 dB)** → selari & 100 %.
+- Loudness: VO −29.0 LUFS (short-term maks −26.6); stem SFX + footage −36.0 LUFS (short-term maks −35.4) ≈ 9 dB di bawah VO.
+- Frame dari fail render (0, 4.66 kilatan, 7.0, 9.9, 12.3, 17.0, 21.0, 26.5, 28.8, 30.6, 35.98 CTA) disemak.
+- Bunyi diukur, bukan didengar.
