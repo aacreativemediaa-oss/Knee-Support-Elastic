@@ -18,7 +18,7 @@ Pembetulan whisper: "injet" → *injured*, "jenis support" → *knee support*, "
 
 | # | Masa | Footage | VO | Grafik |
 | --- | --- | --- | --- | --- |
-| 1 | 0.00–4.65 | b091144 — lelaki berjalan ke kamera — satu shot, laju asal | Senang sakit lutut bila berjalan… overweight… hati-hati | Hook "SENANG SAKIT LUTUT BILA BERJALAN?" frame 0, lencana KG ↑, amaran |
+| 1 | 0.00–4.65 | b091144 — lelaki berjalan ke kamera — satu shot, laju asal | Senang sakit lutut bila berjalan… overweight… hati-hati | Hook "SENANG SAKIT LUTUT BILA BERJALAN?" frame 0; carta **Body Mass Index** (imej dibekalkan) pada *especially…overweight*, lajur OVERWEIGHT diserlahkan (bingkai merah, lain dimalapkan) tepat pada perkataan *overweight* (2.72 s); amaran |
 | 2 | 4.65–7.35 | b114700 0 s — melutut pegang buku lali | Salah langkah… injured | Letupan sakit + vignet merah + gegaran pada *langkah* / *injured* |
 | 3 | 7.35–10.20 | b091215 5 s — bongkok pegang lutut (berdiri lama) | Kerja banyak berjalan / berdiri | Pil "YANG KERJA" + ikon BANYAK BERJALAN / BANYAK BERDIRI |
 | 4 | 10.20–12.78 | v154525 0 s — tunjuk produk | Lebih safety… knee support | Pil perisai "LEBIH SAFETY", viewfinder |
