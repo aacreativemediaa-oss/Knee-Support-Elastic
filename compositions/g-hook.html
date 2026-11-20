@@ -1,0 +1,53 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    #hk-t { top: 300px; }
+    #hk-l1 { font-size: calc(150px * var(--k)); }
+    #hk-l2 { font-size: calc(200px * var(--k)); }
+    #hk-kg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #hk-kgb { position: absolute; left: 744px; top: 300px; width: calc(300px * var(--k)); height: calc(300px * var(--k));
+      border-radius: 50%; background: #fff; border: calc(14px * var(--k)) solid #000; box-shadow: 0 10px 0 rgba(0,0,0,.45);
+      display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    #hk-kgt { font-family: "Anton", sans-serif; font-size: calc(110px * var(--k)); color: #111; line-height: 1; }
+    #hk-arr { position: absolute; left: 880px; top: 268px; width: calc(150px * var(--k)); height: calc(170px * var(--k)); }
+    #hk-warn { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #hk-wi { position: absolute; left: 410px; top: 300px; width: 260px; height: 230px; }
+  </style>
+  <div id="root" data-composition-id="g-hook" data-width="1080" data-height="1920">
+    <!-- Hook: the first frame already carries the question -->
+    <div id="hk-t" class="row t clip" data-start="0" data-duration="1.95">
+      <span id="hk-l1" class="ln">Berdiri lama sikit,</span>
+      <span id="hk-l2" class="ln y">lutut lenguh?</span>
+    </div>
+    <!-- "berat korang dah makin naik" -->
+    <div id="hk-kg" class="clip" data-start="2.45" data-duration="1.8">
+      <div id="hk-kgb"><span id="hk-kgt">KG</span></div>
+      <svg id="hk-arr" viewBox="0 0 150 170"><path d="M75 6 L144 86 H102 V164 H48 V86 H6 Z" fill="#ff2d2d" stroke="#000" stroke-width="10" stroke-linejoin="round"/></svg>
+    </div>
+    <!-- "kena hati-hati" -->
+    <div id="hk-warn" class="clip" data-start="4.28" data-duration="1.12">
+      <svg id="hk-wi" viewBox="0 0 260 230"><path d="M130 12 L250 218 H10 Z" fill="#ffe600" stroke="#000" stroke-width="16" stroke-linejoin="round"/>
+        <rect x="117" y="70" width="26" height="86" rx="10" fill="#000"/><circle cx="130" cy="186" r="15" fill="#000"/></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // visible from frame 0 (thumbnail), settles into place
+    tl.fromTo("#hk-l1", { scale: 1.08 }, { scale: 1, duration: 0.3, ease: "expo.out" }, 0);
+    tl.fromTo("#hk-l2", { scale: 1.12 }, { scale: 1, duration: 0.38, ease: "expo.out" }, 0);
+    tl.fromTo("#hk-t", { opacity: 1, filter: "blur(0px)" }, { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power2.in", immediateRender: false }, 1.72);
+    tl.fromTo("#hk-kgb", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 2.5);
+    tl.fromTo("#hk-arr", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 3.72);
+    tl.fromTo("#hk-kg", { opacity: 1 }, { opacity: 0, duration: 0.15, ease: "power2.in", immediateRender: false }, 4.08);
+    tl.fromTo("#hk-wi", { scale: 0, rotation: -12 }, { scale: 1, rotation: 0, duration: 0.35, ease: "back.out(2)", transformOrigin: "50% 70%" }, 4.3);
+    window.__timelines["g-hook"] = tl;
+  </script>
+</template>

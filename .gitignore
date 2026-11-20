@@ -1,0 +1,5 @@
+node_modules/
+assets/footage/
+.hyperframes/
+renders/*
+!renders/.gitkeep

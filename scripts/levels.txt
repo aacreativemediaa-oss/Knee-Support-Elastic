@@ -1,0 +1,10 @@
+c01-pain L= -40.3 target=-56.6 gain=-16.3dB applied=-16.3dB vol=0.1531 result=-56.6
+c02-walk L= -39.6 target=-56.6 gain=-17.0dB applied=-17.0dB vol=0.1413 result=-56.6
+c03-reveal L= -18.3 target=-56.6 gain=-38.3dB applied=-38.3dB vol=0.0122 result=-56.6
+c04-versi L= -70.0 target=-56.6 gain=+13.4dB applied=+12.0dB vol=3.9811 result=-58.0
+c05-band L= -60.5 target=-56.6 gain=+3.9dB applied=+3.9dB vol=1.5668 result=-56.6
+c06-squat L= -36.0 target=-56.6 gain=-20.6dB applied=-20.6dB vol=0.0933 result=-56.6
+c07-stretch L= -57.9 target=-56.6 gain=+1.3dB applied=+1.3dB vol=1.1614 result=-56.6
+c08-wear L= -30.1 target=-56.6 gain=-26.5dB applied=-26.5dB vol=0.0473 result=-56.6
+c09-sport L= -26.7 target=-56.6 gain=-29.9dB applied=-29.9dB vol=0.0320 result=-56.6
+c10-cta L= -53.7 target=-56.6 gain=-2.9dB applied=-2.9dB vol=0.7161 result=-56.6  (0–7.2 s)

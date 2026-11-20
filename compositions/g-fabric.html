@@ -1,0 +1,38 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    #fb-box { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .chip { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .chip .in { display: inline-flex; align-items: center; gap: 22px; background: rgba(10,10,14,.82); border: 6px solid #39ff14;
+      border-radius: 999px; padding: 10px 42px 14px 26px; box-shadow: 0 8px 0 rgba(0,0,0,.45); }
+    .chip .tx { font-family: "Anton", sans-serif; font-size: calc(130px * var(--k)); color: #fff; text-transform: uppercase; line-height: 1.1; }
+    .chip svg { width: 84px; height: 84px; }
+    #fb-c1 { top: 300px; }
+    #fb-c2 { top: 455px; }
+  </style>
+  <div id="root" data-composition-id="g-fabric" data-width="1080" data-height="1920">
+    <div id="fb-box" class="clip" data-start="0.7" data-duration="1.6">
+      <div id="fb-c1" class="chip"><span class="in" id="fb-i1">
+        <svg viewBox="0 0 84 84"><path d="M4 42 L24 22 V34 H60 V22 L80 42 L60 62 V50 H24 V62 Z" fill="#39ff14"/></svg>
+        <span class="tx">Stretchable</span></span></div>
+      <div id="fb-c2" class="chip"><span class="in" id="fb-i2">
+        <svg viewBox="0 0 84 84"><g fill="none" stroke="#39ff14" stroke-width="8" stroke-linecap="round"><path d="M8 26 C22 14 34 38 48 26 S70 14 78 22"/><path d="M8 46 C22 34 34 58 48 46 S70 34 78 42"/><path d="M8 66 C22 54 34 78 48 66 S70 54 78 62"/></g></svg>
+        <span class="tx">Breathable</span></span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // "stretchable" 20.94 (local 0.74), "breathable" 21.76 (local 1.56)
+    tl.fromTo("#fb-i1", { scaleX: 0.3, scaleY: 0.8, opacity: 0 }, { scaleX: 1, scaleY: 1, opacity: 1, duration: 0.35, ease: "elastic.out(1, 0.55)" }, 0.72);
+    tl.fromTo("#fb-i2", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "expo.out" }, 1.54);
+    window.__timelines["g-fabric"] = tl;
+  </script>
+</template>
