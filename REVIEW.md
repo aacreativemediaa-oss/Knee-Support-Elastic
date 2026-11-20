@@ -52,3 +52,10 @@ Bahagian tak perlu dibuang dari footage (pembungkusan, semburan tin, kuku kaki b
   - `audio_clip_silent` (klip 4/5/7) — sumber memang tiada bunyi.
   - `timeline_track_too_dense` — caption dalam satu fail supaya Studio tunjuk satu trek caption.
 - Bunyi **diukur, bukan didengar**.
+
+## Hasil render (diukur)
+
+- `renders/knee-support-elastic_1080x1920_60fps.mp4`: H.264 1080×1920, 60/1 fps, 40.00 s, AAC 48 kHz stereo 192 kb/s, **67.6 MB** (13.5 Mb/s).
+- VO vs asal (`scripts/verify_vo.py`): offset **0 sampel**, gain dalam mix **0.9977 (−0.02 dB)** → selari & 100 %.
+- Loudness: VO −29.6 LUFS; stem SFX + bunyi footage −35.9 LUFS, short-term maks −35.0 vs VO −28.0 (≈7 dB di bawah VO); puncak mix tiada clipping.
+- Frame dari fail render (0, 5.41 kilatan, 8.65, 13.5, 21.9, 31.9, 34.6, 39.98 CTA) sepadan dengan snapshot Studio.

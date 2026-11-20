@@ -3,3 +3,4 @@ assets/footage/
 .hyperframes/
 renders/*
 !renders/.gitkeep
+!renders/knee-support-elastic_1080x1920_60fps.mp4
