@@ -9,22 +9,20 @@
     .row { position: absolute; left: 0; width: 1080px; text-align: center; }
     .ln { display: block; }
     .ib { display: inline-block; }
-    /* callout = sub-headline 70px, one box per line (reference style) */
-    .co { position: absolute; left: 60px; width: 960px; top: 640px; text-align: center; }
-    .co .cl { display: table; margin: 0 auto 8px; padding: 2px 20px 6px; border-radius: 12px; background: rgba(0,0,0,.42);
-      font-family: "Montserrat", sans-serif; font-style: italic; font-weight: 800; white-space: nowrap;
-      font-size: 70px; line-height: 1.2; color: #fff; letter-spacing: 0;
+    .co { position: absolute; left: 70px; width: 940px; top: 600px; text-align: center; }
+    .co .cl { display: table; margin: 0 auto 8px; padding: 4px 18px 6px; border-radius: 12px; background: rgba(0,0,0,.42);
+      font-family: "Montserrat", sans-serif; font-style: italic; font-weight: 800;
+      font-size: calc(56px * var(--k)); line-height: 1.3; white-space: nowrap; color: #fff; letter-spacing: .01em;
       text-shadow: 0 3px 0 #000, 0 0 12px rgba(0,0,0,.85), 0 0 3px #000; }
   </style>
   <div id="root" data-composition-id="g-travel" data-width="1080" data-height="1920">
     <!-- "So setiap kali korang bergerak tu, dia akan bagi full support" (+ use-case callout) -->
-    <div id="tv-c" class="co clip" data-start="0.46" data-duration="2.54"><span id="tv-c-l0" class="cl">Sesuai untuk travel,</span><span id="tv-c-l1" class="cl">daily commute</span><span id="tv-c-l2" class="cl">&amp; sukan</span></div>
+    <div id="tv-c" class="co clip" data-start="0.46" data-duration="2.54"><span id="tv-c-l0" class="cl">Sesuai untuk travel,</span><span id="tv-c-l1" class="cl">daily commute &amp; sukan</span></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
     tl.fromTo("#tv-c-l0", { opacity: 0, y: 18, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.22, ease: "power3.out" }, 0.48);
-    tl.fromTo("#tv-c-l1", { opacity: 0, y: 18, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.22, ease: "power3.out" }, 0.8);
-    tl.fromTo("#tv-c-l2", { opacity: 0, y: 18, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.22, ease: "power3.out" }, 0.95);
+    tl.fromTo("#tv-c-l1", { opacity: 0, y: 18, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.22, ease: "power3.out" }, 0.9);
     tl.fromTo("#tv-c", { opacity: 1 }, { opacity: 0, duration: 0.14, ease: "power2.in", immediateRender: false }, 2.84);
     window.__timelines["g-travel"] = tl;
   </script>

@@ -16,17 +16,17 @@
       border: 8px solid #fff; box-shadow: 0 16px 0 rgba(0,0,0,.45); background: #fff; }
     #ct-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
     #ct-price { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
-    #ct-tag { position: absolute; left: 130px; top: 620px; width: 750px; height: 420px; }
+    #ct-tag { position: absolute; left: 130px; top: 560px; width: 750px; height: 420px; }
     #ct-tagbg { position: absolute; inset: 0; }
-    #ct-tagtx { position: absolute; left: 120px; right: 30px; top: 92px; text-align: center; }
-    #ct-p1 { font-size: 70px; color: #111; -webkit-text-stroke: 0; text-shadow: none; }
-    #ct-p2 { font-size: 150px; color: #e0161b; -webkit-text-stroke: 0; text-shadow: 0 6px 0 rgba(0,0,0,.25); }
+    #ct-tagtx { position: absolute; left: 120px; right: 30px; top: 50px; text-align: center; }
+    #ct-p1 { font-size: calc(140px * var(--k)); color: #111; -webkit-text-stroke: 0; text-shadow: none; }
+    #ct-p2 { font-size: calc(250px * var(--k)); color: #e0161b; -webkit-text-stroke: 0; text-shadow: 0 6px 0 rgba(0,0,0,.25); }
     .coin { position: absolute; width: 90px; height: 90px; }
     #ct-cta { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
-    #ct-g1 { top: 600px; font-size: 150px; line-height: 0.98; }
-    #ct-sub { top: 930px; }
+    #ct-g1 { top: 460px; font-size: calc(150px * var(--k)); }
+    #ct-sub { top: 630px; }
     #ct-subi { display: inline-block; font-size: calc(52px * var(--k)); color: #111; background: #ffe600; padding: 12px 28px; border-radius: 14px; border: 6px solid #000; }
-    #ct-bag { position: absolute; left: 450px; top: 1015px; width: 180px; height: 195px; }
+    #ct-bag { position: absolute; left: 415px; top: 770px; width: 250px; height: 270px; }
     #ct-arr { position: absolute; left: 80px; top: 1130px; width: 170px; height: 220px; }
   </style>
   <div id="root" data-composition-id="g-cta" data-width="1080" data-height="1920">
@@ -37,12 +37,12 @@
         <svg id="ct-tagbg" viewBox="0 0 750 420"><path d="M110 20 H720 Q740 20 740 40 V380 Q740 400 720 400 H110 L10 210 Z" fill="#ffe600" stroke="#000" stroke-width="12" stroke-linejoin="round"/><circle cx="100" cy="210" r="26" fill="#000"/></svg>
         <div id="ct-tagtx" class="t"><span id="ct-p1" class="ln">Harga</span><span id="ct-p2" class="ln">Murah!</span></div>
       </div>
-      <svg id="ct-k1" class="coin" style="left:120px;top:590px" viewBox="0 0 90 90"><circle cx="45" cy="45" r="40" fill="#ffc400" stroke="#000" stroke-width="6"/><text x="45" y="60" text-anchor="middle" font-family="Anton" font-size="44" fill="#000">RM</text></svg>
-      <svg id="ct-k2" class="coin" style="left:810px;top:1030px" viewBox="0 0 90 90"><circle cx="45" cy="45" r="40" fill="#ffc400" stroke="#000" stroke-width="6"/><text x="45" y="60" text-anchor="middle" font-family="Anton" font-size="44" fill="#000">RM</text></svg>
+      <svg id="ct-k1" class="coin" style="left:120px;top:470px" viewBox="0 0 90 90"><circle cx="45" cy="45" r="40" fill="#ffc400" stroke="#000" stroke-width="6"/><text x="45" y="60" text-anchor="middle" font-family="Anton" font-size="44" fill="#000">RM</text></svg>
+      <svg id="ct-k2" class="coin" style="left:810px;top:970px" viewBox="0 0 90 90"><circle cx="45" cy="45" r="40" fill="#ffc400" stroke="#000" stroke-width="6"/><text x="45" y="60" text-anchor="middle" font-family="Anton" font-size="44" fill="#000">RM</text></svg>
     </div>
     <!-- CTA: grab at the yellow bag below -->
     <div id="ct-cta" class="clip" data-start="2.5" data-duration="3.7">
-      <div id="ct-g1" class="row t"><span class="ln" id="ct-g1a">Grab</span><span class="ln y" id="ct-g1b">sekarang!</span></div>
+      <div id="ct-g1" class="row t"><span class="ib" id="ct-g1a">Grab</span> <span class="ib y" id="ct-g1b">sekarang!</span></div>
       <div id="ct-sub" class="row"><span id="ct-subi" class="lbl">Tekan beg kuning di bawah</span></div>
       <svg id="ct-bag" viewBox="0 0 250 270"><path d="M80 80 V60 Q80 18 125 18 Q170 18 170 60 V80" fill="none" stroke="#000" stroke-width="16" stroke-linecap="round"/>
         <path d="M30 80 H220 L236 252 H14 Z" fill="#ffc400" stroke="#000" stroke-width="12" stroke-linejoin="round"/>

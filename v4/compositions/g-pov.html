@@ -9,25 +9,23 @@
     .row { position: absolute; left: 0; width: 1080px; text-align: center; }
     .ln { display: block; }
     .ib { display: inline-block; }
-    #pov { top: 270px; }
+    #pov { top: 280px; }
     .pl { display: block; margin-bottom: 8px; }
-    .pl span { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 70px;
+    .pl span { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: calc(54px * var(--k));
       color: #fff; background: rgba(60,60,62,.80); padding: 8px 24px 10px; border-radius: 12px; line-height: 1.25; }
   </style>
   <div id="root" data-composition-id="g-pov" data-width="1080" data-height="1920">
     <!-- Hook: POV banner, on screen from frame 0 to the end (reference style) -->
     <div id="pov" class="row clip" data-start="0" data-duration="36">
-      <div class="pl" id="pov-l1"><span>POV: Cuti sekolah nak</span></div>
-      <div class="pl" id="pov-l2"><span>pergi travel, standby</span></div>
-      <div class="pl" id="pov-l3"><span>knee support ni</span></div>
+      <div class="pl" id="pov-l1"><span>POV: Cuti sekolah nak pergi travel,</span></div>
+      <div class="pl" id="pov-l2"><span>standby knee support ni</span></div>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
     // visible at frame 0 (thumbnail), settles in, then holds still
     tl.fromTo("#pov-l1", { scale: 1.1 }, { scale: 1, duration: 0.35, ease: "expo.out" }, 0);
-    tl.fromTo("#pov-l2", { scale: 1.13 }, { scale: 1, duration: 0.4, ease: "expo.out" }, 0);
-    tl.fromTo("#pov-l3", { scale: 1.16 }, { scale: 1, duration: 0.44, ease: "expo.out" }, 0);
+    tl.fromTo("#pov-l2", { scale: 1.16 }, { scale: 1, duration: 0.42, ease: "expo.out" }, 0);
     window.__timelines["g-pov"] = tl;
   </script>
 </template>
