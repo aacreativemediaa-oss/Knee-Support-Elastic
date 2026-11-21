@@ -3,9 +3,15 @@
 VO sama dengan v3 (fail Drive yang sama, 34.32 s, −29.0 LUFS) — transkrip dalam `../v3/REVIEW.md`.
 Format sama: 1080×1920, 60fps, Hyperframes, tiada muzik, VO asal 100 % tanpa potongan, footage diselaraskan ke VO − 27 LU (−56.0 LUFS, had +12 dB), 10 klip, zoom masuk + kilatan putih setiap potongan, caption Anton 60px (kuning aktif, hijau kata kunci, 2–3 perkataan), caption disembunyikan bila grafik tunjuk ayat sama, SFX sintesis.
 
+## Format saiz teks (dikemas kini)
+
+- **Headline 150px**: SENANG PAKAI, SIZING CHART, GRAB / SEKARANG!, MURAH!
+- **Sub-headline 70px**: banner POV (3 baris), callout ciri (satu kotak sebaris), cip BANYAK BERJALAN / BERDIRI, TINGGAL SARUNG JE!, HARGA
+- Caption kekal 60px; label kecil (pil kuning) kekal.
+
 ## Apa yang berubah ikut gambar rujukan
 
-- **Hook = banner POV** di atas, dari frame 0 hingga akhir: "POV: Cuti sekolah nak pergi travel, / standby knee support ni" (Montserrat 600, kotak kelabu gelap lut sinar, dua baris — seperti rujukan).
+- **Hook = banner POV** di atas, dari frame 0 hingga akhir: "POV: Cuti sekolah nak / pergi travel, standby / knee support ni" (Montserrat 600 70px, kotak kelabu gelap lut sinar).
 - **Shot** dipadankan dengan rujukan: kaki memakai support (tangan di lutut, menyarung, tin semburan), produk dilipat di depan muka, squat di trek.
 - **Callout ciri** gaya rujukan (Montserrat italic putih, bayang gelap, dua baris): teks diambil dari rujukan.
 
@@ -24,9 +30,9 @@ Format sama: 1080×1920, 60fps, Hyperframes, tiada muzik, VO asal 100 % tanpa po
 | 9 | 27.30–29.80 | v142805 | Sizing chart | Kad sizing chart sebenar |
 | 10 | 29.80–36.00 | lv202631 7 s — produk depan | Harga murah, rugi, beg kuning | Tag "HARGA MURAH!" → CTA "GRAB SEKARANG!" + beg kuning + anak panah |
 
-Semua grafik atas dialihkan ke bawah banner POV (y ≥ 440) supaya tidak bertindih.
+Semua grafik dialihkan ke bawah banner POV (y ≥ 610) supaya tidak bertindih.
 
 ## Semakan
 
-- `hyperframes check`: 0 ralat. Amaran dikekalkan: banner POV & callout lebar sedikit melepasi tepi kanan zon selamat TikTok/Shorts (dikekalkan supaya dua baris seperti rujukan); klip 9 senyap; caption dalam satu fail.
+- `hyperframes check`: 0 ralat. Amaran dikekalkan: beberapa baris 70px/150px menghampiri tepi kanan zon selamat TikTok/Shorts; klip 9 senyap; caption dalam satu fail.
 - Snapshot setiap babak disemak.
