@@ -1,0 +1,31 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    #pov { top: 280px; }
+    .pl { display: block; margin-bottom: 8px; }
+    .pl span { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: calc(62px * var(--k));
+      color: #fff; background: rgba(60,60,62,.80); padding: 8px 24px 10px; border-radius: 12px; line-height: 1.25; }
+  </style>
+  <div id="root" data-composition-id="g-pov" data-width="1080" data-height="1920">
+    <!-- Hook: POV banner, on screen from frame 0 to the end (reference style) -->
+    <div id="pov" class="row clip" data-start="0" data-duration="36">
+      <div class="pl" id="pov-l1"><span>POV: Cuti sekolah nak pergi travel,</span></div>
+      <div class="pl" id="pov-l2"><span>standby knee support ni</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // visible at frame 0 (thumbnail), settles in, then holds still
+    tl.fromTo("#pov-l1", { scale: 1.1 }, { scale: 1, duration: 0.35, ease: "expo.out" }, 0);
+    tl.fromTo("#pov-l2", { scale: 1.16 }, { scale: 1, duration: 0.42, ease: "expo.out" }, 0);
+    window.__timelines["g-pov"] = tl;
+  </script>
+</template>

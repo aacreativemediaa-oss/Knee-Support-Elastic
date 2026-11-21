@@ -1,0 +1,30 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    #wr-t { top: 450px; }
+    #wr-l1 { font-size: calc(170px * var(--k)); }
+    #wr-l2 { font-size: calc(140px * var(--k)); }
+  </style>
+  <div id="root" data-composition-id="g-wear" data-width="1080" data-height="1920">
+    <!-- "Senang nak pakai, tinggal sarung je." -->
+    <div id="wr-t" class="row t clip" data-start="0.04" data-duration="1.8">
+      <span id="wr-l1" class="ln">Senang pakai</span>
+      <span id="wr-l2" class="ln y">Tinggal sarung je!</span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // "senang" 12.84 (local 0.06), "tinggal" 13.80 (local 1.02)
+    tl.fromTo("#wr-l1", { opacity: 0, scale: 1.25, filter: "blur(8px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.22, ease: "power4.out" }, 0.06);
+    tl.fromTo("#wr-l2", { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.34, ease: "back.out(1.8)" }, 0.78);
+    window.__timelines["g-wear"] = tl;
+  </script>
+</template>
