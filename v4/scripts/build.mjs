@@ -6,6 +6,8 @@ import fs from "node:fs";
 const W = 1080, H = 1920, FPS = 60;
 const DURATION = 36.0;           // VO ends 34.318 s; CTA holds ~1.9 s after it
 const VO_LEN = 34.318;
+// v4 runs without the voiceover (and so without its word captions); timing still follows the VO edit.
+const WITH_VO = false;
 
 // ── Edit decision list (10 clips). Cuts sit in the VO's silences. ─────────
 // vol = gain that lands each clip's own sound at VO − 27 LU (−56.0 LUFS),
@@ -91,10 +93,10 @@ const index = `<!doctype html>
 ${videoTags}
       <div id="flash" data-layout-ignore></div>
 
-      <!-- Voiceover: original, untouched, 100 % -->
+${WITH_VO ? `      <!-- Voiceover: original, untouched, 100 % -->
       <audio id="vo" class="clip" src="assets/audio/vo.m4a" data-start="0" data-duration="${VO_LEN}"
         data-track-index="4" data-volume="1"></audio>
-
+` : "      <!-- No voiceover in this version -->\n"}
       <!-- Motion graphics, one scene per clip -->
 ${sceneHosts}
 
@@ -103,11 +105,11 @@ ${sceneHosts}
         data-start="0" data-duration="${DURATION}" data-track-index="5" data-track-kind="graphics"
         data-width="${W}" data-height="${H}"></div>
 
-      <!-- Captions -->
+${WITH_VO ? `      <!-- Captions -->
       <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html"
         data-start="0" data-duration="${DURATION}" data-track-index="3" data-track-kind="captions"
         data-width="${W}" data-height="${H}"></div>
-
+` : ""}
       <!-- Sound effects (synthesised) -->
 ${sfxTags}
     </div>
@@ -235,6 +237,7 @@ ${gHtml.join("\n")}
 </template>
 `;
 fs.mkdirSync("compositions", { recursive: true });
-fs.writeFileSync("compositions/captions.html", captions);
+if (WITH_VO) fs.writeFileSync("compositions/captions.html", captions);
+else if (fs.existsSync("compositions/captions.html")) fs.unlinkSync("compositions/captions.html");
 console.log(`index.html: ${clips.length} clips, ${sfx.length} sfx; captions: ${groups.length} groups`);
 console.log(groups.map((g) => `${g[0].s.toFixed(2)} ${g.map((w) => clean(w.w)).join(" ")}`).join("\n"));

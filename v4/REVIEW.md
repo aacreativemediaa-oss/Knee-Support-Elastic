@@ -1,5 +1,7 @@
 # REVIEW — Knee Support Elastic v4 (9:16, gaya POV)
 
+> **Kemas kini:** v4 kini **tanpa VO** (permintaan). Trek VO dan caption perkataan (transkrip VO) dibuang (`WITH_VO = false` dalam `scripts/build.mjs`). Banner POV, callout, grafik, SFX dan potongan kekal pada timing yang sama. Bunyi footage kekal pada aras sebelumnya (−56 LUFS), jadi audio kebanyakannya SFX.
+
 VO sama dengan v3 (fail Drive yang sama, 34.32 s, −29.0 LUFS) — transkrip dalam `../v3/REVIEW.md`.
 Format sama: 1080×1920, 60fps, Hyperframes, tiada muzik, VO asal 100 % tanpa potongan, footage diselaraskan ke VO − 27 LU (−56.0 LUFS, had +12 dB), 10 klip, zoom masuk + kilatan putih setiap potongan, caption Anton 60px (kuning aktif, hijau kata kunci, 2–3 perkataan), caption disembunyikan bila grafik tunjuk ayat sama, SFX sintesis.
 
