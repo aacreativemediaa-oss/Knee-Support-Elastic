@@ -1,0 +1,78 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format: headline 150px, sub-headline 70px */
+    .hl { font-size: 150px; line-height: 1.0; }
+    .sh { font-size: 70px; line-height: 1.1; }
+    #ct-scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.35) 60%, rgba(0,0,0,.6)); }
+    #ct-size { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #ct-st { top: 305px; }
+    #ct-card { position: absolute; left: 250px; top: 485px; width: 580px; height: 587px; border-radius: 26px; overflow: hidden; border: 8px solid #fff; box-shadow: 0 16px 0 rgba(0,0,0,.45); background: #fff; }
+    #ct-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #ct-price { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #ct-tag { position: absolute; left: 130px; top: 420px; width: 750px; height: 420px; }
+    #ct-tagbg { position: absolute; inset: 0; }
+    #ct-tagtx { position: absolute; left: 120px; right: 30px; top: 92px; text-align: center; }
+    #ct-p1 { color: #111; -webkit-text-stroke: 0; text-shadow: none; }
+    #ct-p2 { color: #e0161b; -webkit-text-stroke: 0; text-shadow: 0 6px 0 rgba(0,0,0,.25); }
+    .coin { position: absolute; width: 90px; height: 90px; }
+    #ct-cta { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #ct-g1 { top: 320px; }
+    #ct-sub { top: 660px; }
+    #ct-subi { display: inline-block; font-size: 36px; color: #111; background: #ffe600; padding: 12px 28px; border-radius: 14px; border: 6px solid #000; }
+    #ct-bag { position: absolute; left: 450px; top: 760px; width: 180px; height: 195px; }
+    #ct-arr { position: absolute; left: 80px; top: 1130px; width: 170px; height: 220px; }
+  </style>
+  <div id="root" data-composition-id="g-cta" data-width="1080" data-height="1920">
+    <div id="ct-scrim" class="clip" data-start="0" data-duration="8.6" data-layout-ignore></div>
+    <!-- overlay: real sizing chart — "Untuk size pula, korang boleh follow sizing chart ni" -->
+    <div id="ct-size" class="clip" data-start="0.04" data-duration="2.58">
+      <div id="ct-st" class="row t"><span class="hl">Sizing <span class="y">chart</span></span></div>
+      <div id="ct-card"><img src="assets/img/sizing-chart.jpg" alt="Sizing chart" /></div>
+    </div>
+    <!-- "Harga pun tengah murah tau. Memang berbaloi sangat." -->
+    <div id="ct-price" class="clip" data-start="2.62" data-duration="2.62">
+      <div id="ct-tag">
+        <svg id="ct-tagbg" viewBox="0 0 750 420"><path d="M110 20 H720 Q740 20 740 40 V380 Q740 400 720 400 H110 L10 210 Z" fill="#ffe600" stroke="#000" stroke-width="12" stroke-linejoin="round"/><circle cx="100" cy="210" r="26" fill="#000"/></svg>
+        <div id="ct-tagtx" class="t"><span id="ct-p1" class="ln sh">Harga</span><span id="ct-p2" class="ln hl">Murah!</span></div>
+      </div>
+      <svg id="ct-k1" class="coin" style="left:120px;top:390px" viewBox="0 0 90 90"><circle cx="45" cy="45" r="40" fill="#ffc400" stroke="#000" stroke-width="6"/><text x="45" y="60" text-anchor="middle" font-family="Anton" font-size="44" fill="#000">RM</text></svg>
+      <svg id="ct-k2" class="coin" style="left:810px;top:830px" viewBox="0 0 90 90"><circle cx="45" cy="45" r="40" fill="#ffc400" stroke="#000" stroke-width="6"/><text x="45" y="60" text-anchor="middle" font-family="Anton" font-size="44" fill="#000">RM</text></svg>
+    </div>
+    <!-- CTA: "Korang grab terus beg kuning bawah ni" -->
+    <div id="ct-cta" class="clip" data-start="5.24" data-duration="3.36">
+      <div id="ct-g1" class="row t"><span class="ln hl" id="ct-g1a">Grab</span><span class="ln hl y" id="ct-g1b">sekarang!</span></div>
+      <div id="ct-sub" class="row"><span id="ct-subi" class="lbl">Tekan beg kuning di bawah</span></div>
+      <svg id="ct-bag" viewBox="0 0 250 270"><path d="M80 80 V60 Q80 18 125 18 Q170 18 170 60 V80" fill="none" stroke="#000" stroke-width="16" stroke-linecap="round"/><path d="M30 80 H220 L236 252 H14 Z" fill="#ffc400" stroke="#000" stroke-width="12" stroke-linejoin="round"/><path d="M86 150 L112 178 L166 120" fill="none" stroke="#000" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg id="ct-arr" viewBox="0 0 170 220"><path d="M55 8 H115 V130 H160 L85 212 L10 130 H55 Z" fill="#ffe600" stroke="#000" stroke-width="12" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ct-scrim", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0);
+    tl.fromTo("#ct-st", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0.08);
+    tl.fromTo("#ct-card", { y: 700, rotation: 4 }, { y: 0, rotation: 0, duration: 0.55, ease: "expo.out" }, 0.05);
+    tl.fromTo("#ct-size", { opacity: 1 }, { opacity: 0, y: -40, duration: 0.16, ease: "power3.in", immediateRender: false }, 2.46);
+    // price tag slams in on "harga" 36.82 (local 2.82), shakes on "murah" 37.56 (3.56), coins on "berbaloi" 38.54 (4.54)
+    tl.fromTo("#ct-tag", { scale: 2.2, opacity: 0, rotation: -10 }, { scale: 1, opacity: 1, rotation: -4, duration: 0.2, ease: "power4.in" }, 2.8);
+    tl.fromTo("#ct-tag", { rotation: -4 }, { keyframes: [{ rotation: 3, duration: 0.06 }, { rotation: -6, duration: 0.06 }, { rotation: 1, duration: 0.06 }, { rotation: -4, duration: 0.08 }], immediateRender: false }, 3.54);
+    tl.fromTo("#ct-k1", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.3, ease: "back.out(2)" }, 4.52);
+    tl.fromTo("#ct-k2", { scale: 0, rotation: 90 }, { scale: 1, rotation: 0, duration: 0.3, ease: "back.out(2)" }, 4.6);
+    // CTA 39.26 (local 5.26)
+    tl.fromTo("#ct-g1a", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 5.28);
+    tl.fromTo("#ct-g1b", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.32, ease: "expo.out" }, 5.4);
+    tl.fromTo("#ct-subi", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.28, ease: "expo.out" }, 5.7);
+    tl.fromTo("#ct-bag", { scale: 0, rotation: -15 }, { scale: 1, rotation: 0, duration: 0.42, ease: "back.out(1.8)", transformOrigin: "50% 100%" }, 5.85);
+    tl.fromTo("#ct-arr", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 6.0);
+    tl.fromTo("#ct-arr", { y: 0 }, { keyframes: [{ y: 36, duration: 0.18, ease: "power2.in" }, { y: 0, duration: 0.22, ease: "power2.out" }, { y: 36, duration: 0.18, ease: "power2.in" }, { y: 0, duration: 0.22, ease: "power2.out" }, { y: 36, duration: 0.18, ease: "power2.in" }, { y: 0, duration: 0.22, ease: "power2.out" }], immediateRender: false }, 6.4);
+    window.__timelines["g-cta"] = tl;
+  </script>
+</template>

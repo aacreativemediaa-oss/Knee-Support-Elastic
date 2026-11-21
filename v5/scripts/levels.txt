@@ -1,0 +1,11 @@
+VO I=-30.9
+c01-pain L= -40.3 target=-57.9 gain=-17.6dB applied=-17.6dB vol=0.1318 result=-57.9
+c02-walk L= -40.3 target=-57.9 gain=-17.6dB applied=-17.6dB vol=0.1318 result=-57.9
+c03-reveal L= -18.9 target=-57.9 gain=-39.0dB applied=-39.0dB vol=0.0112 result=-57.9
+c04-versi L= -70.0 target=-57.9 gain=+12.1dB applied=+12.0dB vol=3.9811 result=-58.0
+c05-flex L= -55.5 target=-57.9 gain=-2.4dB applied=-2.4dB vol=0.7586 result=-57.9
+c06-step L= -35.3 target=-57.9 gain=-22.6dB applied=-22.6dB vol=0.0741 result=-57.9
+c07-fabric L= -44.4 target=-57.9 gain=-13.5dB applied=-13.5dB vol=0.2113 result=-57.9
+c08-sport L= -33.7 target=-57.9 gain=-24.2dB applied=-24.2dB vol=0.0617 result=-57.9
+c09-wear L= -30.1 target=-57.9 gain=-27.8dB applied=-27.8dB vol=0.0407 result=-57.9
+c10-cta L= -49.1 target=-57.9 gain=-8.8dB applied=-8.8dB vol=0.3631 result=-57.9

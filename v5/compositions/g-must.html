@@ -1,0 +1,28 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format: headline 150px, sub-headline 70px */
+    .hl { font-size: 150px; line-height: 1.0; }
+    .sh { font-size: 70px; line-height: 1.1; }
+    #mu-stamp { position: absolute; left: 0; width: 1080px; top: 300px; text-align: center; }
+    #mu-si { display: inline-block; font-family: "Anton", sans-serif; text-transform: uppercase; color: #ffe600; padding: 6px 40px 14px; background: #e0161b; border: 10px solid #fff; border-radius: 24px; box-shadow: 0 12px 0 rgba(0,0,0,.5); -webkit-text-stroke: 8px #000; paint-order: stroke fill; }
+  </style>
+  <div id="root" data-composition-id="g-must" data-width="1080" data-height="1920">
+    <!-- "korang wajib standby knee support macam ni" -->
+    <div id="mu-st" class="clip" data-start="2.62" data-duration="1.53"><div id="mu-stamp"><span id="mu-si"><span class="ln hl">Wajib</span><span class="ln hl">standby!</span></span></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#mu-si", { scale: 2.2, rotation: -14, opacity: 0 }, { scale: 1, rotation: -4, opacity: 1, duration: 0.22, ease: "power4.in" }, 2.64);
+    tl.fromTo("#mu-stamp", { y: 0 }, { keyframes: [{ y: 12, duration: 0.05 }, { y: -4, duration: 0.05 }, { y: 0, duration: 0.06 }], immediateRender: false }, 2.86);
+    window.__timelines["g-must"] = tl;
+  </script>
+</template>

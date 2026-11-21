@@ -1,0 +1,40 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format: headline 150px, sub-headline 70px */
+    .hl { font-size: 150px; line-height: 1.0; }
+    .sh { font-size: 70px; line-height: 1.1; }
+    #fl-a, #fl-b { top: 300px; }
+    #fl-m { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #fl-arrw { position: absolute; left: 190px; top: 800px; width: 700px; height: 110px; }
+  </style>
+  <div id="root" data-composition-id="g-flex" data-width="1080" data-height="1920">
+    <!-- "Siap ada elastic band dekat belah kiri dan kanan" -->
+    <div id="fl-a" class="row t clip" data-start="0.48" data-duration="1.56"><span id="fl-a1" class="ln sh">Kiri &amp; kanan</span><span id="fl-a2" class="ln hl y">Elastic band</span></div>
+    <!-- "Lebih fleksibel berbanding yang version lama" -->
+    <div id="fl-b" class="row t clip" data-start="2.06" data-duration="2.24"><span id="fl-b1" class="ln sh">Lebih</span><span id="fl-b2" class="ln hl g">Fleksibel</span><span id="fl-b3" class="ln sh">berbanding version lama</span></div>
+    <!-- stretch arrow, pulled with the hands in the footage -->
+    <div id="fl-m" class="clip" data-start="0.3" data-duration="4.0"><div id="fl-arrw"><svg viewBox="0 0 700 110" preserveAspectRatio="none" style="width:700px;height:110px"><path d="M6 55 L86 6 V36 H614 V6 L694 55 L614 104 V74 H86 V104 Z" fill="#ffe600" stroke="#000" stroke-width="9" stroke-linejoin="round"/></svg></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#fl-a1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 0.5);
+    tl.fromTo("#fl-a2", { opacity: 0, scaleX: 0.5 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "elastic.out(1, 0.5)" }, 0.54);
+    tl.fromTo("#fl-a", { opacity: 1 }, { opacity: 0, duration: 0.15, ease: "power2.in", immediateRender: false }, 1.88);
+    tl.fromTo("#fl-b1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 2.08);
+    tl.fromTo("#fl-b2", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 2.14);
+    tl.fromTo("#fl-b3", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, ease: "power4.out" }, 2.9);
+    tl.fromTo("#fl-arrw", { scaleX: 0.35, opacity: 0 }, { scaleX: 0.7, opacity: 1, duration: 0.2, ease: "power2.out" }, 0.32);
+    tl.fromTo("#fl-arrw", { scaleX: 0.7 }, { keyframes: [{ scaleX: 1.12, duration: 0.45, ease: "power2.out" }, { scaleX: 0.75, duration: 0.4, ease: "elastic.out(1, 0.45)" }, { scaleX: 1.15, duration: 0.45, ease: "power2.out" }, { scaleX: 0.8, duration: 0.45, ease: "elastic.out(1, 0.45)" }], immediateRender: false }, 0.55);
+    tl.fromTo("#fl-arrw", { scaleX: 0.8 }, { keyframes: [{ scaleX: 1.2, duration: 0.3, ease: "power2.out" }, { scaleX: 0.9, duration: 0.45, ease: "elastic.out(1, 0.45)" }], immediateRender: false }, 2.14);
+    window.__timelines["g-flex"] = tl;
+  </script>
+</template>

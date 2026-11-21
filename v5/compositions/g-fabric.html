@@ -1,0 +1,51 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format: headline 150px, sub-headline 70px */
+    .hl { font-size: 150px; line-height: 1.0; }
+    .sh { font-size: 70px; line-height: 1.1; }
+    .chip { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .chip .in { display: inline-flex; align-items: center; gap: 20px; background: rgba(10,10,14,.84); border: 6px solid #39ff14; border-radius: 999px; padding: 6px 40px 10px 24px; box-shadow: 0 8px 0 rgba(0,0,0,.45); }
+    .chip .tx { font-family: "Anton", sans-serif; font-size: 70px; color: #fff; text-transform: uppercase; line-height: 1.15; }
+    .chip svg { width: 76px; height: 76px; }
+    #fb-c1 { top: 300px; } #fb-c2 { top: 430px; }
+    #fb-h { position: absolute; left: 0; width: 1080px; top: 300px; text-align: center; }
+    #fb-hi { display: inline-block; font-size: 42px; color: #111; background: #ffe600; padding: 8px 24px; border-radius: 14px; border: 6px solid #000; }
+    .it { position: absolute; left: 0; width: 1080px; text-align: center; }
+    #fb-r1 { top: 395px; } #fb-r2 { top: 525px; }
+    .it .in { display: inline-flex; align-items: center; gap: 20px; background: rgba(10,10,14,.84); border: 5px solid #fff; border-radius: 999px; padding: 6px 42px 10px 18px; box-shadow: 0 8px 0 rgba(0,0,0,.4); }
+    .it svg { width: 70px; height: 70px; flex: none; }
+    .it .tx { font-family: "Anton", sans-serif; font-size: 70px; color: #fff; text-transform: uppercase; line-height: 1.15; }
+  </style>
+  <div id="root" data-composition-id="g-fabric" data-width="1080" data-height="1920">
+    <!-- "Dan kain dia pun sangat stretchable dan breathable" -->
+    <div id="fb-chips" class="clip" data-start="0.9" data-duration="1.25">
+      <div id="fb-c1" class="chip"><span class="in" id="fb-i1"><svg viewBox="0 0 84 84"><path d="M4 42 L24 22 V34 H60 V22 L80 42 L60 62 V50 H24 V62 Z" fill="#39ff14"/></svg><span class="tx">Stretchable</span></span></div>
+      <div id="fb-c2" class="chip"><span class="in" id="fb-i2"><svg viewBox="0 0 84 84"><g fill="none" stroke="#39ff14" stroke-width="8" stroke-linecap="round"><path d="M8 26 C22 14 34 38 48 26 S70 14 78 22"/><path d="M8 46 C22 34 34 58 48 46 S70 34 78 42"/><path d="M8 66 C22 54 34 78 48 66 S70 54 78 62"/></g></svg><span class="tx">Breathable</span></span></div>
+    </div>
+    <!-- "Korang nak pakai lama pun, kulit korang tak rasa gatal ataupun berkuap" -->
+    <div id="fb-list" class="clip" data-start="2.62" data-duration="2.73">
+      <div id="fb-h"><span id="fb-hi" class="lbl">Pakai lama pun</span></div>
+      <div class="it" id="fb-r1"><span class="in"><svg viewBox="0 0 76 76"><circle cx="38" cy="38" r="35" fill="#39ff14"/><path d="M20 39 L33 52 L57 26" fill="none" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tx">Tak gatal</span></span></div>
+      <div class="it" id="fb-r2"><span class="in"><svg viewBox="0 0 76 76"><circle cx="38" cy="38" r="35" fill="#39ff14"/><path d="M20 39 L33 52 L57 26" fill="none" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tx">Tak berkuap</span></span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#fb-i1", { scaleX: 0.3, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.35, ease: "elastic.out(1, 0.55)" }, 0.94);
+    tl.fromTo("#fb-i2", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "expo.out" }, 1.64);
+    tl.fromTo("#fb-chips", { opacity: 1 }, { opacity: 0, duration: 0.15, ease: "power2.in", immediateRender: false }, 1.98);
+    tl.fromTo("#fb-hi", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 2.66);
+    tl.fromTo("#fb-r1 .in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 4.24);
+    tl.fromTo("#fb-r2 .in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 4.6);
+    window.__timelines["g-fabric"] = tl;
+  </script>
+</template>
