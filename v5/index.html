@@ -31,12 +31,12 @@
       </div>
       <div class="vw" id="w03">
         <video id="c03" class="clip" src="assets/footage/c03-reveal.mp4"
-          data-start="8.78" data-duration="3.64" data-media-start="0"
+          data-start="8.78" data-duration="1.94" data-media-start="0"
           data-track-index="0" data-has-audio="true" data-volume="0.0112" playsinline></video>
       </div>
       <div class="vw" id="w04">
         <video id="c04" class="clip" src="assets/footage/c04-versi.mp4"
-          data-start="12.42" data-duration="1.3" data-media-start="0"
+          data-start="10.72" data-duration="3" data-media-start="0"
           data-track-index="0" data-has-audio="true" data-volume="3.9811" playsinline></video>
       </div>
       <div class="vw" id="w05">
@@ -83,10 +83,10 @@
         data-start="5.7" data-duration="3.08" data-track-index="2"
         data-track-kind="graphics" data-width="1080" data-height="1920"></div>
       <div id="g-reveal" data-composition-id="g-reveal" data-composition-src="compositions/g-reveal.html"
-        data-start="8.78" data-duration="3.64" data-track-index="2"
+        data-start="8.78" data-duration="1.94" data-track-index="2"
         data-track-kind="graphics" data-width="1080" data-height="1920"></div>
       <div id="g-versi" data-composition-id="g-versi" data-composition-src="compositions/g-versi.html"
-        data-start="12.42" data-duration="1.3" data-track-index="2"
+        data-start="10.72" data-duration="3" data-track-index="2"
         data-track-kind="graphics" data-width="1080" data-height="1920"></div>
       <div id="g-flex" data-composition-id="g-flex" data-composition-src="compositions/g-flex.html"
         data-start="13.72" data-duration="4.3" data-track-index="2"
@@ -132,7 +132,7 @@
       <audio id="sfx09" class="clip" src="assets/sfx/pop.wav"
         data-start="11.3" data-duration="0.12" data-track-index="6" data-volume="0.16"></audio>
       <audio id="sfx10" class="clip" src="assets/sfx/whoosh-a.wav"
-        data-start="12.22" data-duration="0.42" data-track-index="6" data-volume="0.13"></audio>
+        data-start="10.52" data-duration="0.42" data-track-index="7" data-volume="0.13"></audio>
       <audio id="sfx11" class="clip" src="assets/sfx/ding.wav"
         data-start="12.92" data-duration="1.1" data-track-index="6" data-volume="0.12"></audio>
       <audio id="sfx12" class="clip" src="assets/sfx/whoosh-b.wav"
@@ -184,7 +184,7 @@
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      const clips = [{"w":"#w01","s":0},{"w":"#w02","s":5.7},{"w":"#w03","s":8.78},{"w":"#w04","s":12.42},{"w":"#w05","s":13.72},{"w":"#w06","s":18.02},{"w":"#w07","s":21.4},{"w":"#w08","s":26.75},{"w":"#w09","s":29.85},{"w":"#w10","s":34}];
+      const clips = [{"w":"#w01","s":0},{"w":"#w02","s":5.7},{"w":"#w03","s":8.78},{"w":"#w04","s":10.72},{"w":"#w05","s":13.72},{"w":"#w06","s":18.02},{"w":"#w07","s":21.4},{"w":"#w08","s":26.75},{"w":"#w09","s":29.85},{"w":"#w10","s":34}];
       // every clip: brief zoom-in as it lands
       clips.forEach((c) => {
         tl.set(c.w, { scale: 1, transformOrigin: "50% 50%" }, 0);
@@ -192,7 +192,7 @@
       });
       // white flash on every cut
       tl.set("#flash", { opacity: 0 }, 0);
-      [5.7,8.78,12.42,13.72,18.02,21.4,26.75,29.85,34].forEach((t) => {
+      [5.7,8.78,10.72,13.72,18.02,21.4,26.75,29.85,34].forEach((t) => {
         tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.85, duration: 0.05, ease: "none", immediateRender: false }, t - 0.05);
         tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.24, ease: "power2.out", immediateRender: false }, t);
       });

@@ -23,17 +23,12 @@
   </style>
   <div id="root" data-composition-id="g-reveal" data-width="1080" data-height="1920">
     <!-- "So nak kurangkan lenguh lutut tu" -->
-    <div id="rv-sol" class="row clip" data-start="0.36" data-duration="1.7"><span id="rv-pill" class="lbl">✦ Solusinya</span></div>
-    <!-- viewfinder on "knee support" -->
-    <div id="rv-br" class="clip" data-start="2.5" data-duration="1.14" data-layout-ignore>
-      <div id="rv-c1" class="cr"></div><div id="rv-c2" class="cr"></div><div id="rv-c3" class="cr"></div><div id="rv-c4" class="cr"></div>
-    </div>
+    <div id="rv-sol" class="row clip" data-start="0.36" data-duration="1.58"><span id="rv-pill" class="lbl">✦ Solusinya</span></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
     tl.fromTo("#rv-pill", { scale: 0, rotation: -6 }, { scale: 1, rotation: 0, duration: 0.4, ease: "back.out(1.7)" }, 0.38);
-    tl.fromTo("#rv-pill", { opacity: 1 }, { opacity: 0, duration: 0.15, ease: "power2.in", immediateRender: false }, 1.88);
-    [["#rv-c1", -60, -60], ["#rv-c2", 60, -60], ["#rv-c3", -60, 60], ["#rv-c4", 60, 60]].forEach(([s, x, y]) => tl.fromTo(s, { x, y, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.3, ease: "expo.out" }, 2.52));
+    tl.fromTo("#rv-pill", { opacity: 1 }, { opacity: 0, duration: 0.15, ease: "power2.in", immediateRender: false }, 1.76);
     window.__timelines["g-reveal"] = tl;
   </script>
 </template>

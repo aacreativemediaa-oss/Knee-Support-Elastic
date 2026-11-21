@@ -24,8 +24,8 @@ Pembetulan whisper: "ni support" → *knee support* (×2), "kabel kuning" → *b
 | --- | --- | --- | --- | --- |
 | 1 | 0.00–5.70 | b091215 — bongkok pegang lutut — satu shot | Berdiri lama… berat naik… hati-hati | Hook frame 0: sub "BERDIRI LAMA SIKIT," + headline "LUTUT LENGUH?"; **overlay carta BMI** — penanda naik dari NORMAL ke OVERWEIGHT pada *naik*; amaran |
 | 2 | 5.70–8.78 | b091144 — berjalan | Bila berjalan… sengal | Vignet merah + letupan + gegaran pada *sengal* |
-| 3 | 8.78–12.42 | v154525 — tunjuk produk | Kurangkan lenguh… knee support | Pil "SOLUSINYA", viewfinder |
-| 4 | 12.42–13.72 | v225323 — **baru vs lama** (skrin belah) | Version terbaru | sub "VERSION" + headline "TERBARU", tag BARU ✓ / LAMA |
+| 3 | 8.78–10.72 | v154525 — tunjuk produk | So nak kurangkan lenguh lutut tu | Pil "SOLUSINYA" |
+| 4 | 10.72–13.72 (**3 s**) | v225323 — **baru vs lama** (skrin belah) | Korang boleh pakai knee support macam ni. Version terbaru | Viewfinder pada support baru (*knee support*), kemudian sub "VERSION" + headline "TERBARU", tag BARU ✓ / LAMA, sisi lama dimalapkan |
 | 5 | 13.72–18.02 | lv202631 29 s — tangan meregang elastic band | Elastic band kiri kanan… lebih fleksibel vs lama | "KIRI & KANAN / ELASTIC BAND" → "LEBIH / FLEKSIBEL / BERBANDING VERSION LAMA", anak panah ↔ meregang |
 | 6 | 18.02–21.40 | lv151319 23.6 s — squat & lompat | Melangkah… bantu support pergerakan | sub "BANTU SUPPORT" + headline "PERGERAKAN" |
 | 7 | 21.40–26.75 | lv202631 18.4 s — tekan jalur elastik (dekat) | Stretchable & breathable… tak gatal / berkuap | Cip STRETCHABLE / BREATHABLE → "PAKAI LAMA PUN" ✓ TAK GATAL ✓ TAK BERKUAP |
