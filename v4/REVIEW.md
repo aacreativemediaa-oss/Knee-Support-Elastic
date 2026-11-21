@@ -38,10 +38,10 @@ Semua grafik atas dialihkan ke bawah banner POV (y ≥ 440) supaya tidak bertind
 Untuk v4, susun atur ikut tangkapan skrin yang diluluskan (banner POV kecil dua baris, callout italic dua baris, saiz tajuk asal ×0.7).
 Format baharu **headline 150px / sub-headline 70px** disimpan untuk tugasan seterusnya (dicuba di commit f06894b, kemudian dipulihkan untuk v4 atas permintaan).
 
-## Hasil render (diukur)
+## Hasil render (diukur) — tanpa VO
 
 - `v4/renders/knee-support-elastic-v4_1080x1920_60fps.mp4`: H.264 1080×1920, 60/1 fps, 36.00 s, **65.4 MB**.
-- VO vs asal: offset **0 sampel**, gain **0.9972 (−0.02 dB)** → selari & 100 %.
-- Stem SFX + footage −35.9 LUFS (short-term maks −35.3) ≈ 9 dB di bawah VO (−29.0 LUFS, maks −26.6).
-- Frame dari fail render (0, 3.0, 9.9, 11.9, 14.2, 17.0, 20.2, 23.5, 26.0, 28.8, 30.8, 35.98) disemak — sepadan dengan tangkapan skrin yang diluluskan.
+- VO tiada dalam mix: korelasi dengan VO asal → gain 0.0011 (−58.9 dB), iaitu tiada.
+- Audio keseluruhan (SFX + bunyi footage −56 LUFS, tiada muzik — format dikekalkan): −35.9 LUFS, puncak −18.0 dBFS.
+- Frame dari fail render (1.2, 6.1, 11.9, 17.0, 23.5, 35.98) disemak — tiada caption, banner POV & callout kekal.
 - Bunyi diukur, bukan didengar.
