@@ -28,3 +28,10 @@ Setiap callout dipegang ~2.8 s (cukup masa baca), keluar sebelum potongan; callo
 - `hyperframes check`: 0 ralat.
 - Snapshot setiap babak + frame akhir disemak.
 - Projek boleh dihidupkan semula dengan VO: `WITH_VO = true` dalam `scripts/build.mjs` (perlu EDL ikut VO semula).
+
+## Hasil render (diukur)
+
+- `v4/renders/knee-support-elastic-v4_1080x1920_60fps.mp4`: H.264 1080×1920, 60/1 fps, 23.20 s, **60.1 MB** (20 Mb/s, di bawah had 70 MB).
+- Audio: tiada VO, tiada muzik; SFX + bunyi footage −56 LUFS → keseluruhan −37.0 LUFS, puncak −18.0 dBFS. Diukur, bukan didengar.
+- Frame dari fail render (0, 3.65 kilatan, 5.2, 8.4, 11.6, 14.8, 18.0, 23.18 akhir) disemak.
+- Amaran dikekalkan: callout panjang ("Bahagian kiri & kanan ada elastic band,", "Naik turun tangga, lutut steady je!") sedikit melepasi tepi kanan zon selamat Shorts/TikTok — dikekalkan dua baris seperti rujukan.
