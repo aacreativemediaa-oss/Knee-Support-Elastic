@@ -37,3 +37,11 @@ Pembetulan whisper: "ni support" → *knee support* (×2), "kabel kuning" → *b
 
 - `hyperframes check`: 0 ralat. Amaran dikekalkan: beberapa headline 150px menghampiri tepi atas/kanan zon selamat Reels/Shorts; caption "PAKAI KNEE SUPPORT" di tepi kanan zon TikTok; klip 4 senyap; caption dalam satu fail.
 - Snapshot setiap babak disemak.
+
+## Hasil render (diukur)
+
+- `v5/renders/knee-support-elastic-v5_1080x1920_60fps.mp4`: H.264 1080×1920, 60/1 fps, 42.60 s, AAC 48 kHz, **64.7 MB**.
+- VO vs asal: offset **0 sampel**, gain **0.9965 (−0.03 dB)** → selari & 100 %.
+- Loudness: VO −30.9 LUFS (short-term maks −29.4); stem SFX + footage −36.3 LUFS (short-term maks −34.3) ≈ 5 dB di bawah VO pada puncak, puncak −15 dBFS vs VO −8.9 dBFS.
+- Frame dari fail render (0, 3.5, 4.3, 5.71 kilatan, 13.3, 17.4, 21.0, 26.5, 33.4, 35.8, 37.8, 42.58 CTA) disemak.
+- Bunyi diukur, bukan didengar.
