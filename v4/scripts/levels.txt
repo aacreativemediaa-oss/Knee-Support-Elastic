@@ -1,11 +1,8 @@
-VO I=-29.0
-c01-legs L= -31.7 target=-56.0 gain=-24.3dB applied=-24.3dB vol=0.0610 result=-56.0
-c02-ankle L= -35.4 target=-56.0 gain=-20.6dB applied=-20.6dB vol=0.0933 result=-56.0
-c03-walk L= -37.6 target=-56.0 gain=-18.4dB applied=-18.4dB vol=0.1202 result=-56.0
+No VO in v4: footage kept at the format level, -56.0 LUFS (VO-27 of the v3/v4 VO, -29.0)
+c01-puton L= -40.9 target=-56.0 gain=-15.1dB applied=-15.1dB vol=0.1758 result=-56.0
+c02-silicone L= -30.7 target=-56.0 gain=-25.3dB applied=-25.3dB vol=0.0543 result=-56.0
+c03-band L= -40.3 target=-56.0 gain=-15.7dB applied=-15.7dB vol=0.1641 result=-56.0
 c04-fold L= -19.7 target=-56.0 gain=-36.3dB applied=-36.3dB vol=0.0153 result=-56.0
-c05-puton L= -39.0 target=-56.0 gain=-17.0dB applied=-17.0dB vol=0.1413 result=-56.0
-c06-knees L= -27.0 target=-56.0 gain=-29.0dB applied=-29.0dB vol=0.0355 result=-56.0
-c07-squat L= -35.0 target=-56.0 gain=-21.0dB applied=-21.0dB vol=0.0891 result=-56.0
-c08-breath L= -21.9 target=-56.0 gain=-34.1dB applied=-34.1dB vol=0.0197 result=-56.0
-c09-size L= -65.0 target=-56.0 gain=+9.0dB applied=+9.0dB vol=2.8184 result=-56.0
-c10-cta L= -47.9 target=-56.0 gain=-8.1dB applied=-8.1dB vol=0.3936 result=-56.0
+c05-thick L= -23.9 target=-56.0 gain=-32.1dB applied=-32.1dB vol=0.0248 result=-56.0
+c06-allday L= -21.3 target=-56.0 gain=-34.7dB applied=-34.7dB vol=0.0184 result=-56.0
+c07-squat L= -35.5 target=-56.0 gain=-20.5dB applied=-20.5dB vol=0.0944 result=-56.0

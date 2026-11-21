@@ -4,43 +4,34 @@
 import fs from "node:fs";
 
 const W = 1080, H = 1920, FPS = 60;
-const DURATION = 36.0;           // VO ends 34.318 s; CTA holds ~1.9 s after it
+const DURATION = 23.2;           // no VO: each beat holds long enough to read its callout
 const VO_LEN = 34.318;
-// v4 runs without the voiceover (and so without its word captions); timing still follows the VO edit.
+// v4 runs without the voiceover (and so without its word captions).
 const WITH_VO = false;
 
-// ── Edit decision list (10 clips). Cuts sit in the VO's silences. ─────────
-// vol = gain that lands each clip's own sound at VO − 27 LU (−56.0 LUFS),
-// capped at +12 dB (see scripts/levels.txt).
+// ── Edit decision list: 7 shots, one per reference screenshot, in its order.
+// vol = gain landing each clip's own sound at the format level, −56.0 LUFS (cap +12 dB; scripts/levels.txt).
 const clips = [
-  { id: "c01", src: "c01-legs",   start: 0.00,  end: 4.65,  vol: 0.0610, g: "g-hook"   },
-  { id: "c02", src: "c02-ankle",  start: 4.65,  end: 7.35,  vol: 0.0933, g: "g-pain"   },
-  { id: "c03", src: "c03-walk",   start: 7.35,  end: 10.20, vol: 0.1202, g: "g-work"   },
-  { id: "c04", src: "c04-fold",   start: 10.20, end: 12.78, vol: 0.0153, g: "g-fold"   },
-  { id: "c05", src: "c05-puton",  start: 12.78, end: 14.62, vol: 0.1413, g: "g-wear"   },
-  { id: "c06", src: "c06-knees",  start: 14.62, end: 18.62, vol: 0.0355, g: "g-band"   },
-  { id: "c07", src: "c07-squat",  start: 18.62, end: 21.62, vol: 0.0891, g: "g-travel" },
-  { id: "c08", src: "c08-breath", start: 21.62, end: 27.30, vol: 0.0197, g: "g-breath" },
-  { id: "c09", src: "c09-size",   start: 27.30, end: 29.80, vol: 2.8184, g: "g-size"   },
-  { id: "c10", src: "c10-cta",    start: 29.80, end: DURATION, vol: 0.3936, g: "g-cta" },
+  { id: "c01", src: "c01-puton",    start: 0.0,  end: 3.6,  vol: 0.1758, g: null         },
+  { id: "c02", src: "c02-silicone", start: 3.6,  end: 6.8,  vol: 0.0543, g: "g-silicone" },
+  { id: "c03", src: "c03-band",     start: 6.8,  end: 10.0, vol: 0.1641, g: "g-band"     },
+  { id: "c04", src: "c04-fold",     start: 10.0, end: 13.2, vol: 0.0153, g: "g-fold"     },
+  { id: "c05", src: "c05-thick",    start: 13.2, end: 16.4, vol: 0.0248, g: "g-thick"    },
+  { id: "c06", src: "c06-allday",   start: 16.4, end: 19.6, vol: 0.0184, g: "g-allday"   },
+  { id: "c07", src: "c07-squat",    start: 19.6, end: DURATION, vol: 0.0944, g: "g-travel" },
 ];
 
-// ── Sound effects (synthesised, ../scripts/synth_sfx.py). Kept well under the VO.
-// whoosh peaks ~0.2 s after its start, so it starts 0.2 s before the cut.
+// ── Sound effects (synthesised, ../scripts/synth_sfx.py), kept low.
+// whoosh peaks ~0.2 s after its start, so it starts 0.2 s before the cut; a pop as each callout lands.
 const W_A = "whoosh-a", W_B = "whoosh-b";
 const sfx = [
   ["impact", 0.02, 0.20],
-  [W_B, 1.80, 0.10], ["pop", 2.72, 0.16], ["pop", 3.90, 0.16],
-  [W_A, 4.45, 0.13], ["zap", 5.52, 0.12], ["zap", 6.98, 0.12],
-  [W_B, 7.15, 0.13], ["pop", 8.28, 0.15], ["pop", 8.66, 0.16], ["pop", 9.58, 0.16],
-  [W_A, 10.00, 0.13], ["pop", 10.40, 0.15], ["pop", 11.30, 0.15],
-  [W_B, 12.58, 0.13], ["pop", 12.86, 0.16], ["ding", 13.62, 0.11],
-  [W_A, 14.42, 0.13], ["pop", 15.00, 0.15], ["pop", 16.60, 0.15],
-  [W_B, 18.42, 0.13], ["pop", 19.10, 0.15],
-  [W_A, 21.42, 0.13], ["pop", 22.72, 0.16], ["pop", 24.60, 0.16],
-  [W_B, 27.10, 0.13],
-  ["riser", 28.72, 0.12], ["impact", 29.90, 0.18], ["cha-ching", 30.26, 0.16],
-  [W_A, 32.10, 0.12], ["pop", 33.50, 0.16],
+  [W_A, 3.40, 0.13],  ["pop", 3.88, 0.16],
+  [W_B, 6.60, 0.13],  ["pop", 7.08, 0.16],
+  [W_A, 9.80, 0.13],  ["pop", 10.28, 0.16],
+  [W_B, 13.00, 0.13], ["pop", 13.48, 0.16],
+  [W_A, 16.20, 0.13], ["pop", 16.68, 0.16],
+  [W_B, 19.40, 0.13], ["pop", 19.88, 0.16], ["ding", 20.40, 0.10],
 ];
 const sfxLen = { "whoosh-a": 0.42, "whoosh-b": 0.36, pop: 0.12, ding: 1.1, impact: 0.7, "cha-ching": 1.0, riser: 1.2, zap: 0.22 };
 
@@ -126,10 +117,6 @@ ${sfxTags}
       ${JSON.stringify(cutTimes)}.forEach((t) => {
         tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.85, duration: 0.05, ease: "none", immediateRender: false }, t - 0.05);
         tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.24, ease: "power2.out", immediateRender: false }, t);
-      });
-      // pain beat: a short jolt on "langkah" and "injured"
-      [5.52, 6.98].forEach((t) => {
-        tl.fromTo("#w02", { x: 0 }, { keyframes: [{ x: -14, duration: 0.04 }, { x: 12, duration: 0.04 }, { x: -8, duration: 0.04 }, { x: 5, duration: 0.04 }, { x: 0, duration: 0.05 }], immediateRender: false }, t);
       });
       window.__timelines["main"] = tl;
     </script>

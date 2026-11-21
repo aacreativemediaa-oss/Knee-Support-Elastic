@@ -1,0 +1,31 @@
+<template>
+  <style>
+  
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: calc(16px * var(--k)) #000; paint-order: stroke fill; text-shadow: 0 calc(10px * var(--k)) 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    .co { position: absolute; left: 70px; width: 940px; top: 600px; text-align: center; }
+    .co .cl { display: table; margin: 0 auto 8px; padding: 4px 18px 6px; border-radius: 12px; background: rgba(0,0,0,.42);
+      font-family: "Montserrat", sans-serif; font-style: italic; font-weight: 800;
+      font-size: calc(56px * var(--k)); line-height: 1.3; white-space: nowrap; color: #fff; letter-spacing: .01em;
+      text-shadow: 0 3px 0 #000, 0 0 12px rgba(0,0,0,.85), 0 0 3px #000; }
+  
+  </style>
+  <div id="root" data-composition-id="g-thick" data-width="1080" data-height="1920">
+    <!-- callout from the reference screenshot -->
+    <div id="tk-c" class="co clip" data-start="0.22" data-duration="2.98"><span id="tk-c-l0" class="cl">Kain nampak tebal,</span><span id="tk-c-l1" class="cl">tapi sangat breathable!</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#tk-c-l0", { opacity: 0, y: 18, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.22, ease: "power3.out" }, 0.26);
+    tl.fromTo("#tk-c-l1", { opacity: 0, y: 18, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.22, ease: "power3.out" }, 0.62);
+    tl.fromTo("#tk-c", { opacity: 1 }, { opacity: 0, duration: 0.14, ease: "power2.in", immediateRender: false }, 2.92);
+    window.__timelines["g-thick"] = tl;
+  </script>
+</template>
