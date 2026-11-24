@@ -17,7 +17,7 @@ enc c04-old       "$SRC/ov/v203948.mp4"   0.9   2.1
 enc c05-flex      "$SRC/ov/lv202631.mp4" 29.0   4.7
 enc c07-fold      "$SRC/ov/v154525.mp4"   1.4   2.9
 enc c08-walk      "$SRC/ov/lv151319.mp4" 30.4   4.9
-enc c09-fabric    "$SRC/ov/lv202631.mp4" 18.4   4.2
+enc c09-spray     "$SRC/ov/lv151319.mp4" 19.0   4.05   # spray passes through the knit = breathable
 enc c10-cta       "$SRC/ov/lv202631.mp4"  7.0   9.8
 # c06: square split-screen (new vs old) placed on a dark blurred fill of itself
 ffmpeg -v error -y -ss 0.3 -i "$SRC/ov/v225323.mp4" -t 2.4 -filter_complex \

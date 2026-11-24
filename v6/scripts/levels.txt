@@ -7,5 +7,5 @@ c05-flex L= -55.7 target=-55.0 gain=+0.7dB applied=+0.7dB vol=1.0839 result=-55.
 c06-versi L= -70.0 target=-55.0 gain=+15.0dB applied=+12.0dB vol=3.9811 result=-58.0
 c07-fold L= -18.4 target=-55.0 gain=-36.6dB applied=-36.6dB vol=0.0148 result=-55.0
 c08-walk L= -24.0 target=-55.0 gain=-31.0dB applied=-31.0dB vol=0.0282 result=-55.0
-c09-fabric L= -44.1 target=-55.0 gain=-10.9dB applied=-10.9dB vol=0.2851 result=-55.0
+c09-spray L= -21.2 target=-55.0 vol=0.0204 (lv151319 19.0-23.0 s)
 c10-cta L= -49.5 target=-55.0 gain=-5.5dB applied=-5.5dB vol=0.5309 result=-55.0

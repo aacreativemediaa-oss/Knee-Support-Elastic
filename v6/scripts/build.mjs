@@ -19,7 +19,7 @@ const clips = [
   { id: "c06", src: "c06-versi",  start: 14.85, end: 17.05, vol: 3.9811, g: "g-versi"  },
   { id: "c07", src: "c07-fold",   start: 17.05, end: 19.72, vol: 0.0148, g: "g-fold"   },
   { id: "c08", src: "c08-walk",   start: 19.72, end: 24.40, vol: 0.0282, g: "g-step"   },
-  { id: "c09", src: "c09-fabric", start: 24.40, end: 28.40, vol: 0.2851, g: "g-fabric" },
+  { id: "c09", src: "c09-spray",  start: 24.40, end: 28.40, vol: 0.0204, g: "g-fabric" },
   { id: "c10", src: "c10-cta",    start: 28.40, end: DURATION, vol: 0.5309, g: "g-cta" },
 ];
 

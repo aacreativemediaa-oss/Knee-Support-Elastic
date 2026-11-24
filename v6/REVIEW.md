@@ -28,7 +28,7 @@ Pembetulan whisper: "bagian" → *bahagian*, "sizing cat" → *sizing chart*.
 | 6 | 14.85–17.05 | v225323 — **baru vs lama** | Lebih fleksibel daripada version lama | sub "LEBIH" + headline "FLEKSIBEL" + "daripada version lama", chip BARU ✓ / LAMA, sisi lama dimalapkan |
 | 7 | 17.05–19.72 | v154525 1.4 s — dilipat lalu kembali tegak | Lipat… kembali ke bentuk asal | Ikon ↻ berputar, "LIPAT PUN / KEMBALI KE / BENTUK ASAL" |
 | 8 | 19.72–24.40 | lv151319 30.4 s — squat → high-knees | Berjalan… lebih supportive, lebih confident | Cip ✓ LEBIH SUPPORTIVE / ✓ LEBIH CONFIDENT |
-| 9 | 24.40–28.40 | lv202631 18.4 s — jalur elastik dekat | Breathable, tak gatal kulit | Cip BREATHABLE / ✓ TAK GATAL KULIT |
+| 9 | 24.40–28.40 | lv151319 19 s — **semburan tin tembus kain** (wap keluar di depan lutut ≈ 26.1–27.1 s) | Breathable, tak gatal kulit | Cip BREATHABLE / ✓ TAK GATAL KULIT |
 | 10 | 28.40–38.00 | lv202631 7 s — produk depan | Sizing… murah… rugi… sebelum size habis… link | **Overlay sizing chart** + "SIZING CHART" → tag "HARGA / MURAH!" + syiling pada *rugi* → **pelekat** "SEBELUM SIZE HABIS!" → CTA "CHECK OUT / SEKARANG!" + chip "Klik link di bawah" + anak panah |
 
 ## Semakan
