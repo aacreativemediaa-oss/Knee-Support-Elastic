@@ -42,3 +42,11 @@ Pembetulan whisper: "bagian" → *bahagian*, "sizing cat" → *sizing chart*.
 - **Elastic band** = jalur berbentuk U di sisi support (sebelah kanan corak jam pasir pada pandangan depan; juga di tepi bahagian dalam).
 - **Silicone cushion** = bulatan di tengah jalur biru (shot dekat jari menekan jalur biru, lv202631 ≈ 16–24 s).
 - **Breathable** = shot tin semburan, wap tembus kain (lv151319 ≈ 20.75–21.75 s).
+
+## Hasil render (diukur)
+
+- `v6/renders/knee-support-elastic-v6_1080x1920_60fps.mp4`: H.264 1080×1920, 60/1 fps, 38.00 s, AAC 48 kHz, **66.1 MB**.
+- VO vs asal: offset **0 sampel**, gain **0.9971 (−0.02 dB)** → selari & 100 %.
+- Loudness: VO −28.0 LUFS (short-term maks −26.2); stem SFX + footage −36.1 LUFS (short-term maks −35.5) ≈ 9 dB di bawah VO.
+- Frame dari fail render (0, 3.91 kilatan, 5.9, 7.9, 9.9, 11.4, 14.2, 16.6, 19.4, 24.0, 26.4, 29.8, 32.5, 34.0, 37.98 CTA) disemak.
+- Bunyi diukur, bukan didengar.
