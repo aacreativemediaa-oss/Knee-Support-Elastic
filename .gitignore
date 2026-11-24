@@ -27,3 +27,9 @@ v5/assets/footage/
 v5/.hyperframes/
 v5/renders/*
 !v5/renders/knee-support-elastic-v5_1080x1920_60fps.mp4
+
+v6/node_modules
+v6/assets/footage/
+v6/.hyperframes/
+v6/renders/*
+!v6/renders/knee-support-elastic-v6_1080x1920_60fps.mp4

@@ -1,0 +1,37 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 100px; line-height: 1.02; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    #hk-t { top: 300px; }
+  </style>
+  <div id="root" data-composition-id="g-hook" data-width="1080" data-height="1920">
+    <!-- Hook, on screen at frame 0 -->
+    <div id="hk-t" class="row t clip" data-start="0" data-duration="3.82">
+      <span id="hk-l1" class="ln sh">Kerja banyak berjalan / berdiri?</span>
+      <span id="hk-l2" class="ln hl">Lutut cepat</span>
+      <span id="hk-l3" class="ln hl y">lenguh!</span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#hk-l1", { scale: 1.08 }, { scale: 1, duration: 0.3, ease: "expo.out" }, 0);
+    tl.fromTo("#hk-l2", { scale: 1.1 }, { scale: 1, duration: 0.34, ease: "expo.out" }, 0);
+    tl.fromTo("#hk-l3", { scale: 1.14 }, { scale: 1, duration: 0.38, ease: "expo.out" }, 0);
+    // "lenguh" 3.26: the word gets a jolt
+    tl.fromTo("#hk-l3", { x: 0 }, { keyframes: [{ x: -12, duration: 0.04 }, { x: 10, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.05 }], immediateRender: false }, 3.26);
+    tl.fromTo("#hk-t", { opacity: 1, filter: "blur(0px)" }, { opacity: 0, filter: "blur(10px)", duration: 0.18, ease: "power2.in", immediateRender: false }, 3.62);
+    window.__timelines["g-hook"] = tl;
+  </script>
+</template>

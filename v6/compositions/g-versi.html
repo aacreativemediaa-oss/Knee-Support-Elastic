@@ -1,0 +1,40 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 100px; line-height: 1.02; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    #vs-t { top: 250px; }
+    #vs-tags { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .tag { position: absolute; top: 560px; }
+    #vs-new { left: 70px; background: #39ff14; color: #000; }
+    #vs-old { left: 640px; background: #c9c9c9; color: #333; text-decoration: line-through; text-decoration-thickness: 3px; }
+    #vs-dim { position: absolute; left: 540px; top: 520px; width: 540px; height: 1080px; background: #000; }
+  </style>
+  <div id="root" data-composition-id="g-versi" data-width="1080" data-height="1920">
+    <div id="vs-dim" class="clip" data-start="1.4" data-duration="0.8" data-layout-ignore></div>
+    <!-- "So lebih fleksibel daripada version lama" -->
+    <div id="vs-t" class="row t clip" data-start="0.05" data-duration="2.15"><span id="vs-w1" class="ln sh">Lebih</span><span id="vs-w2" class="ln hl g">Fleksibel</span><span id="vs-w3" class="ln sh">daripada version lama</span></div>
+    <div id="vs-tags" class="clip" data-start="0.6" data-duration="1.6"><span id="vs-new" class="tag chip19">Baru ✓</span><span id="vs-old" class="tag chip19">Lama</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#vs-w1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out" }, 0.08);
+    tl.fromTo("#vs-w2", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.62);
+    tl.fromTo("#vs-w3", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 1.0);
+    tl.fromTo("#vs-new", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, 0.64);
+    tl.fromTo("#vs-old", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, 1.44);
+    tl.fromTo("#vs-dim", { opacity: 0 }, { opacity: 0.5, duration: 0.3, ease: "power2.out" }, 1.42);
+    window.__timelines["g-versi"] = tl;
+  </script>
+</template>

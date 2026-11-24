@@ -1,0 +1,55 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 100px; line-height: 1.02; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    #sp-vig { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: radial-gradient(ellipse at 50% 55%, rgba(255,0,0,0) 40%, rgba(220,0,0,.5) 100%); }
+    #sp-card { position: absolute; left: 690px; top: 300px; width: 300px; height: 640px; border-radius: 26px; background: rgba(255,255,255,.92); border: 5px solid #000; box-shadow: 0 10px 0 rgba(0,0,0,.45); }
+    #sp-body { position: absolute; left: 0; top: 0; width: 300px; height: 640px; }
+    .lab { position: absolute; }
+    #sp-lk { left: 20px; top: 470px; } #sp-lw { left: 20px; top: 250px; }
+  </style>
+  <div id="root" data-composition-id="g-spread" data-width="1080" data-height="1920">
+    <!-- overlay: "lenguh tu boleh bawa sampai ke pinggang" -->
+    <div id="sp-vig" class="clip" data-start="0.55" data-duration="1.91" data-layout-ignore></div>
+    <div id="sp-box" class="clip" data-start="0.2" data-duration="2.26">
+      <div id="sp-card">
+        <svg id="sp-body" viewBox="0 0 300 640">
+          <defs><radialGradient id="sp-g"><stop offset="0" stop-color="#ff1a1a" stop-opacity=".95"/><stop offset="1" stop-color="#ff1a1a" stop-opacity="0"/></radialGradient></defs>
+          <g fill="#3a3a44"><circle cx="150" cy="70" r="40"/><path d="M95 120 Q150 104 205 120 L222 300 Q150 318 78 300 Z"/><path d="M78 300 Q150 318 222 300 L212 360 L160 360 L156 600 L120 600 L106 360 L88 360 Z"/><path d="M95 125 L58 290 L76 294 L110 160 Z"/><path d="M205 125 L242 290 L224 294 L190 160 Z"/><path d="M212 360 L196 600 L160 600 L160 360 Z"/></g>
+          <path id="sp-path" d="M140 480 C 150 420, 150 360, 150 300" fill="none" stroke="#ff1a1a" stroke-width="10" stroke-linecap="round" stroke-dasharray="4 18"/>
+          <circle id="sp-gk" cx="138" cy="480" r="60" fill="url(#sp-g)"/>
+          <circle id="sp-gw" cx="150" cy="296" r="72" fill="url(#sp-g)"/>
+        </svg>
+        <span id="sp-lk" class="lab chip19" style="background:#ffe600;color:#111">Lutut</span>
+        <span id="sp-lw" class="lab chip19" style="background:#ff2d2d;color:#fff">Pinggang</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#sp-card", { x: 360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 0.2);
+    tl.fromTo("#sp-gk", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.58);
+    tl.fromTo("#sp-lk", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, 0.62);
+    tl.fromTo("#sp-path", { opacity: 0, strokeDashoffset: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 0.95);
+    tl.fromTo("#sp-path", { attr: { d: "M140 480 C 140 480, 140 480, 140 480" } }, { attr: { d: "M140 480 C 150 420, 150 360, 150 300" }, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 0.95);
+    tl.fromTo("#sp-gw", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 1.68);
+    tl.fromTo("#sp-lw", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, 1.72);
+    tl.fromTo("#sp-vig", { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "none" }, 0.6);
+    tl.fromTo("#sp-vig", { opacity: 1 }, { opacity: 0.3, duration: 0.4, ease: "power2.out", immediateRender: false }, 0.75);
+    tl.fromTo("#sp-vig", { opacity: 0.3 }, { opacity: 1, duration: 0.1, ease: "none", immediateRender: false }, 1.68);
+    tl.fromTo("#sp-vig", { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power2.out", immediateRender: false }, 1.85);
+    window.__timelines["g-spread"] = tl;
+  </script>
+</template>

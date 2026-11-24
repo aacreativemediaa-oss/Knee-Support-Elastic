@@ -1,0 +1,36 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 100px; line-height: 1.02; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    #fo-t { top: 1020px; }
+    #fo-ic { position: absolute; left: 470px; top: 870px; width: 140px; height: 140px; }
+  </style>
+  <div id="root" data-composition-id="g-fold" data-width="1080" data-height="1920">
+    <!-- "Bila korang lipat kain ni, dia akan kembali ke bentuk asal tau" -->
+    <div id="fo-box" class="clip" data-start="0.46" data-duration="2.21">
+      <svg id="fo-ic" viewBox="0 0 140 140"><circle cx="70" cy="70" r="64" fill="#ffe600" stroke="#000" stroke-width="7"/><path d="M98 52 A36 36 0 1 0 104 84" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round"/><path d="M84 40 L106 52 L96 74" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div id="fo-t" class="row t"><span id="fo-l1" class="ln sh">Lipat pun</span><span id="fo-l2" class="ln sh">kembali ke</span><span id="fo-l3" class="ln hl y">bentuk asal</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#fo-ic", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, 0.48);
+    tl.fromTo("#fo-ic", { rotation: 0 }, { rotation: 360, duration: 1.1, ease: "power2.inOut", immediateRender: false }, 0.8);
+    tl.fromTo("#fo-l1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 0.5);
+    tl.fromTo("#fo-l2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 1.58);
+    tl.fromTo("#fo-l3", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 1.96);
+    window.__timelines["g-fold"] = tl;
+  </script>
+</template>
