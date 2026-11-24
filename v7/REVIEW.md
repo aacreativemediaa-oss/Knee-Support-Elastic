@@ -36,3 +36,11 @@ Pembetulan whisper: "Macam Korea, Retail dan FMB" → *macam kerja retail dan F&
 - `hyperframes check`: 0 ralat.
 - Amaran dikekalkan dengan sengaja: `text_below_floor` untuk chip/label 19px (ikut format); klip 5 senyap; caption dalam satu fail.
 - Snapshot setiap babak disemak.
+
+## Hasil render (diukur)
+
+- `v7/renders/knee-support-elastic-v7_1080x1920_60fps.mp4`: H.264 1080×1920, 60/1 fps, 41.30 s, AAC 48 kHz, **66.5 MB**.
+- VO vs asal: offset **0 sampel**, gain **0.9973 (−0.02 dB)** → selari & 100 %.
+- Loudness: VO −29.6 LUFS (short-term maks −27.9); stem SFX + footage −36.3 LUFS (short-term maks −36.1) ≈ 8 dB di bawah VO.
+- Frame dari fail render (0, 3.9, 6.3, 8.9, 9.53 kilatan, 12.9, 15.9, 17.9, 21.9, 26.0, 28.8, 30.9, 33.9, 35.0, 41.28 CTA) disemak.
+- Bunyi diukur, bukan didengar.
