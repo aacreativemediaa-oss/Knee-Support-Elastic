@@ -14,7 +14,7 @@ enc c01-pain      "$SRC/br/b091215.mp4"   1.0   4.1
 enc c02-walk      "$SRC/br/b091144.mp4"   0.5   2.7
 enc c03-reveal    "$SRC/ov/v154525.mp4"   6.0   2.35
 enc c04-old       "$SRC/ov/v203948.mp4"   0.9   2.1
-enc c05-band      "$SRC/ov/lv202631.mp4" 12.45  4.7    # front view: the elastic band strip is outlined (14.7-15.85 s)
+enc c05-band      "$SRC/ov/lv202631.mp4" 11.37  4.5    # front view only (ends before the silicone-cushion close-up at 15.9 s); band strip outlined 14.7-15.85 s
 enc c07-fold      "$SRC/ov/v154525.mp4"   1.4   2.9
 enc c08-walk      "$SRC/ov/lv151319.mp4" 30.4   4.9
 enc c09-spray     "$SRC/ov/lv151319.mp4" 19.0   4.05   # spray passes through the knit = breathable

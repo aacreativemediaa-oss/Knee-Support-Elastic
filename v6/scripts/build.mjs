@@ -15,7 +15,7 @@ const clips = [
   { id: "c02", src: "c02-walk",   start: 3.90,  end: 6.36,  vol: 0.1950, g: "g-spread" },
   { id: "c03", src: "c03-reveal", start: 6.36,  end: 8.50,  vol: 0.0123, g: "g-reveal" },
   { id: "c04", src: "c04-old",    start: 8.50,  end: 10.37, vol: 0.0135, g: "g-old"    },
-  { id: "c05", src: "c05-band",   start: 10.37, end: 14.85, vol: 0.7762, g: "g-band"   },
+  { id: "c05", src: "c05-band",   start: 10.37, end: 14.85, vol: 0.7079, g: "g-band"   },
   { id: "c06", src: "c06-versi",  start: 14.85, end: 17.05, vol: 3.9811, g: "g-versi"  },
   { id: "c07", src: "c07-fold",   start: 17.05, end: 19.72, vol: 0.0148, g: "g-fold"   },
   { id: "c08", src: "c08-walk",   start: 19.72, end: 24.40, vol: 0.0282, g: "g-step"   },

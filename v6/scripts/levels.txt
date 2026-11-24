@@ -3,7 +3,7 @@ c01-pain L= -39.6 target=-55.0 gain=-15.4dB applied=-15.4dB vol=0.1698 result=-5
 c02-walk L= -40.8 target=-55.0 gain=-14.2dB applied=-14.2dB vol=0.1950 result=-55.0
 c03-reveal L= -16.8 target=-55.0 gain=-38.2dB applied=-38.2dB vol=0.0123 result=-55.0
 c04-old L= -17.6 target=-55.0 gain=-37.4dB applied=-37.4dB vol=0.0135 result=-55.0
-c05-band L= -52.8 target=-55.0 vol=0.7762 (lv202631 12.45-16.93 s)
+c05-band L= -52.0 target=-55.0 vol=0.7079 (lv202631 11.37-15.85 s)
 c06-versi L= -70.0 target=-55.0 gain=+15.0dB applied=+12.0dB vol=3.9811 result=-58.0
 c07-fold L= -18.4 target=-55.0 gain=-36.6dB applied=-36.6dB vol=0.0148 result=-55.0
 c08-walk L= -24.0 target=-55.0 gain=-31.0dB applied=-31.0dB vol=0.0282 result=-55.0

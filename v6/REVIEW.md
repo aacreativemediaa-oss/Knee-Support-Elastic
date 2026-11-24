@@ -24,7 +24,7 @@ Pembetulan whisper: "bagian" → *bahagian*, "sizing cat" → *sizing chart*.
 | 2 | 3.90–6.36 | b091144 — berjalan | Lenguh sampai ke pinggang | **Overlay badan**: cahaya merah di lutut → garis naik → pinggang (label LUTUT / PINGGANG), vignet merah, gegaran |
 | 3 | 6.36–8.50 | v154525 6 s — tunjuk produk | Kena pakai knee support | Viewfinder pada *knee support* |
 | 4 | 8.50–10.37 | v203948 — support lama (hijau) terkulai di tangan | Bukan kain biasa yang lembek | sub "BUKAN" + headline "KAIN BIASA" + "YANG LEMBEK", garis pangkah merah + ikon ✗ |
-| 5 | 10.37–14.85 | lv202631 12.45 s — produk depan, kemudian tekan jalur | Kain special… elastic band kiri kanan | "TAPI KAIN DIA / SPECIAL" → headline "ELASTIC BAND" + "kiri & kanan"; **garis kuning menyurih jalur elastic band** (sebelah kanan jam pasir, ikut rujukan), dilukis pada *elastic band* dan dijejak mengikut gerakan produk (12.62–13.8 s) |
+| 5 | 10.37–14.85 | lv202631 11.37 s — sisi → **produk depan** (tiada shot dekat silicone cushion) | Kain special… elastic band kiri kanan | "TAPI KAIN DIA / SPECIAL" → headline "ELASTIC BAND" + "kiri & kanan"; **garis kuning menyurih jalur elastic band** (sebelah kanan jam pasir, ikut rujukan), dilukis pada *kiri dan kanan* (13.70 s) dan dijejak mengikut gerakan produk hingga akhir klip |
 | 6 | 14.85–17.05 | v225323 — **baru vs lama** | Lebih fleksibel daripada version lama | sub "LEBIH" + headline "FLEKSIBEL" + "daripada version lama", chip BARU ✓ / LAMA, sisi lama dimalapkan |
 | 7 | 17.05–19.72 | v154525 1.4 s — dilipat lalu kembali tegak | Lipat… kembali ke bentuk asal | Ikon ↻ berputar, "LIPAT PUN / KEMBALI KE / BENTUK ASAL" |
 | 8 | 19.72–24.40 | lv151319 30.4 s — squat → high-knees | Berjalan… lebih supportive, lebih confident | Cip ✓ LEBIH SUPPORTIVE / ✓ LEBIH CONFIDENT |
@@ -36,3 +36,9 @@ Pembetulan whisper: "bagian" → *bahagian*, "sizing cat" → *sizing chart*.
 - `hyperframes check`: 0 ralat.
 - Amaran dikekalkan dengan sengaja: `text_below_floor` — chip/label 19px (LUTUT, PINGGANG, BARU ✓, LAMA, "Klik link di bawah") di bawah lantai bacaan telefon 28px; ikut format yang ditetapkan. "Elastic band" hampir tepi atas zon Shorts; klip 6 senyap; caption dalam satu fail.
 - Snapshot setiap babak disemak.
+
+## Nota rujukan produk (dari pengguna)
+
+- **Elastic band** = jalur berbentuk U di sisi support (sebelah kanan corak jam pasir pada pandangan depan; juga di tepi bahagian dalam).
+- **Silicone cushion** = bulatan di tengah jalur biru (shot dekat jari menekan jalur biru, lv202631 ≈ 16–24 s).
+- **Breathable** = shot tin semburan, wap tembus kain (lv151319 ≈ 20.75–21.75 s).
