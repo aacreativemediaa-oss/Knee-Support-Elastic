@@ -1,0 +1,84 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 100px; line-height: 1.02; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    .chip { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .chip .in { display: inline-flex; align-items: center; gap: 14px; background: rgba(10,10,14,.84); border: 4px solid #39ff14; border-radius: 999px; padding: 6px 30px 8px 16px; box-shadow: 0 6px 0 rgba(0,0,0,.45); }
+    .chip .in.w { border-color: #fff; }
+    .chip .tx { font-family: "Anton", sans-serif; font-size: 47px; color: #fff; text-transform: uppercase; line-height: 1.15; }
+    .chip svg { width: 54px; height: 54px; flex: none; }
+    #hk-t { top: 300px; }
+    #hk-c1 { top: 590px; left: -200px; } #hk-c2 { top: 590px; left: 200px; } #hk-c3 { top: 590px; }
+    .chip .in.y { border-color: #ffe600; }
+    #sp-vig { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: radial-gradient(ellipse at 50% 55%, rgba(255,0,0,0) 40%, rgba(220,0,0,.5) 100%); }
+    #sp-card { position: absolute; left: 690px; top: 300px; width: 300px; height: 640px; border-radius: 26px; background: rgba(255,255,255,.92); border: 5px solid #000; box-shadow: 0 10px 0 rgba(0,0,0,.45); }
+    #sp-body { position: absolute; left: 0; top: 0; width: 300px; height: 640px; }
+    .lab { position: absolute; }
+    #sp-lk { left: 20px; top: 470px; } #sp-lw { left: 20px; top: 250px; }
+  </style>
+  <div id="root" data-composition-id="g-hook" data-width="1080" data-height="1920">
+    <!-- Hook, on screen at frame 0: "Kerja banyak berjalan ataupun berdiri … lutut memang cepat lenguh" -->
+    <div id="hk-box" class="clip" data-start="0" data-duration="7.08">
+      <div id="hk-t" class="row t"><span id="hk-l1" class="ln sh">Kerja banyak berjalan / berdiri?</span><span id="hk-l2" class="ln hl">Lutut cepat</span><span id="hk-l3" class="ln hl y">lenguh!</span></div>
+      <!-- "Macam kerja retail dan F&B" -->
+      <div id="hk-c1" class="chip"><span class="in" id="hk-i1"><svg viewBox="0 0 84 84"><path d="M26 30 V24 Q26 10 42 10 Q58 10 58 24 V30" fill="none" stroke="#39ff14" stroke-width="7" stroke-linecap="round"/><path d="M12 30 H72 L76 76 H8 Z" fill="#39ff14"/></svg><span class="tx">Retail</span></span></div>
+      <div id="hk-c2" class="chip"><span class="in" id="hk-i2"><svg viewBox="0 0 84 84"><path d="M14 22 H60 V52 Q60 72 37 72 Q14 72 14 52 Z" fill="#39ff14"/><path d="M60 30 Q76 30 76 42 Q76 54 60 54" fill="none" stroke="#39ff14" stroke-width="7"/><path d="M28 6 Q24 12 28 16 M40 6 Q36 12 40 16" stroke="#39ff14" stroke-width="5" fill="none" stroke-linecap="round"/></svg><span class="tx">F&amp;B</span></span></div>
+      <!-- "kena berdiri berjam-jam kan" -->
+      <div id="hk-c3" class="chip"><span class="in y" id="hk-i3"><svg viewBox="0 0 84 84"><circle cx="42" cy="42" r="36" fill="none" stroke="#ffe600" stroke-width="8"/><path id="hk-hand" d="M42 42 V20" stroke="#ffe600" stroke-width="7" stroke-linecap="round"/><path d="M42 42 L58 50" stroke="#ffe600" stroke-width="7" stroke-linecap="round"/></svg><span class="tx">Berdiri berjam-jam</span></span></div>
+    </div>
+    <!-- overlay: "Lama-lama, lenguh tu boleh naik sampai ke pinggang tau" -->
+    <div id="sp-vig" class="clip" data-start="7.66" data-duration="1.86" data-layout-ignore></div>
+    <div id="sp-box" class="clip" data-start="7.1" data-duration="2.42">
+      <div id="sp-card">
+        <svg id="sp-body" viewBox="0 0 300 640">
+          <defs><radialGradient id="sp-g"><stop offset="0" stop-color="#ff1a1a" stop-opacity=".95"/><stop offset="1" stop-color="#ff1a1a" stop-opacity="0"/></radialGradient></defs>
+          <g fill="#3a3a44"><circle cx="150" cy="70" r="40"/><path d="M95 120 Q150 104 205 120 L222 300 Q150 318 78 300 Z"/><path d="M78 300 Q150 318 222 300 L212 360 L160 360 L156 600 L120 600 L106 360 L88 360 Z"/><path d="M95 125 L58 290 L76 294 L110 160 Z"/><path d="M205 125 L242 290 L224 294 L190 160 Z"/><path d="M212 360 L196 600 L160 600 L160 360 Z"/></g>
+          <path id="sp-path" d="M140 480 C 150 420, 150 360, 150 300" fill="none" stroke="#ff1a1a" stroke-width="10" stroke-linecap="round" stroke-dasharray="4 18"/>
+          <circle id="sp-gk" cx="138" cy="480" r="60" fill="url(#sp-g)"/>
+          <circle id="sp-gw" cx="150" cy="296" r="72" fill="url(#sp-g)"/>
+        </svg>
+        <span id="sp-lk" class="lab chip19" style="background:#ffe600;color:#111">Lutut</span>
+        <span id="sp-lw" class="lab chip19" style="background:#ff2d2d;color:#fff">Pinggang</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#hk-l1", { scale: 1.08 }, { scale: 1, duration: 0.3, ease: "expo.out" }, 0);
+    tl.fromTo("#hk-l2", { scale: 1.1 }, { scale: 1, duration: 0.34, ease: "expo.out" }, 0);
+    tl.fromTo("#hk-l3", { scale: 1.14 }, { scale: 1, duration: 0.38, ease: "expo.out" }, 0);
+    // "retail" 2.98, "F&B" 3.85, "lenguh" 5.28, "berdiri berjam-jam" 5.90
+    tl.fromTo("#hk-i1", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 2.96);
+    tl.fromTo("#hk-i2", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 3.83);
+    tl.fromTo("#hk-l3", { x: 0 }, { keyframes: [{ x: -12, duration: 0.04 }, { x: 10, duration: 0.04 }, { x: -6, duration: 0.04 }, { x: 0, duration: 0.05 }], immediateRender: false }, 5.28);
+    tl.fromTo(["#hk-i1", "#hk-i2"], { opacity: 1 }, { opacity: 0, y: -20, duration: 0.15, ease: "power2.in", immediateRender: false }, 5.66);
+    tl.fromTo("#hk-i3", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 5.86);
+    tl.fromTo("#hk-hand", { rotation: 0, svgOrigin: "42 42" }, { rotation: 360, duration: 0.9, ease: "power2.inOut", immediateRender: false }, 5.9);
+    tl.fromTo("#hk-box", { opacity: 1, filter: "blur(0px)" }, { opacity: 0, filter: "blur(10px)", duration: 0.18, ease: "power2.in", immediateRender: false }, 6.9);
+    // body overlay: "lenguh" 7.74 at the knee, "pinggang" 8.74 at the waist
+    tl.fromTo("#sp-card", { x: 360, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 7.12);
+    tl.fromTo("#sp-gk", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 7.72);
+    tl.fromTo("#sp-lk", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, 7.76);
+    tl.fromTo("#sp-path", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 8.0);
+    tl.fromTo("#sp-path", { attr: { d: "M140 480 C 140 480, 140 480, 140 480" } }, { attr: { d: "M140 480 C 150 420, 150 360, 150 300" }, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 8.0);
+    tl.fromTo("#sp-gw", { scale: 0, opacity: 0, transformOrigin: "50% 50%" }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 8.72);
+    tl.fromTo("#sp-lw", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, 8.76);
+    tl.fromTo("#sp-vig", { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "none" }, 7.7);
+    tl.fromTo("#sp-vig", { opacity: 1 }, { opacity: 0.3, duration: 0.4, ease: "power2.out", immediateRender: false }, 7.85);
+    tl.fromTo("#sp-vig", { opacity: 0.3 }, { opacity: 1, duration: 0.1, ease: "none", immediateRender: false }, 8.72);
+    tl.fromTo("#sp-vig", { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power2.out", immediateRender: false }, 8.9);
+    window.__timelines["g-hook"] = tl;
+  </script>
+</template>

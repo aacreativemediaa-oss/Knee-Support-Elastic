@@ -1,0 +1,33 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 100px; line-height: 1.02; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    #rv-br { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .cr { position: absolute; width: 90px; height: 90px; border: 12px solid #39ff14; filter: drop-shadow(0 0 2px #000) drop-shadow(0 4px 0 rgba(0,0,0,.6)); }
+    #rv-c1 { left: 250px; top: 280px; border-right: 0; border-bottom: 0; border-top-left-radius: 18px; }
+    #rv-c2 { left: 740px; top: 280px; border-left: 0; border-bottom: 0; border-top-right-radius: 18px; }
+    #rv-c3 { left: 250px; top: 900px; border-right: 0; border-top: 0; border-bottom-left-radius: 18px; }
+    #rv-c4 { left: 740px; top: 900px; border-left: 0; border-top: 0; border-bottom-right-radius: 18px; }
+  </style>
+  <div id="root" data-composition-id="g-reveal" data-width="1080" data-height="1920">
+    <!-- "korang kena pakai knee support macam ni" -->
+    <div id="rv-br" class="clip" data-start="0.94" data-duration="1.08" data-layout-ignore><div id="rv-c1" class="cr"></div><div id="rv-c2" class="cr"></div><div id="rv-c3" class="cr"></div><div id="rv-c4" class="cr"></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    [["#rv-c1", -50, -50], ["#rv-c2", 50, -50], ["#rv-c3", -50, 50], ["#rv-c4", 50, 50]].forEach(([q, x, y]) => tl.fromTo(q, { x, y, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.3, ease: "expo.out" }, 0.96));
+    window.__timelines["g-reveal"] = tl;
+  </script>
+</template>

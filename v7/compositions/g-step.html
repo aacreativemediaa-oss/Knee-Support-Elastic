@@ -1,0 +1,37 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 100px; line-height: 1.02; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    .chip { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .chip .in { display: inline-flex; align-items: center; gap: 14px; background: rgba(10,10,14,.84); border: 4px solid #39ff14; border-radius: 999px; padding: 6px 30px 8px 16px; box-shadow: 0 6px 0 rgba(0,0,0,.45); }
+    .chip .in.w { border-color: #fff; }
+    .chip .tx { font-family: "Anton", sans-serif; font-size: 47px; color: #fff; text-transform: uppercase; line-height: 1.15; }
+    .chip svg { width: 54px; height: 54px; flex: none; }
+    #st-c1 { top: 300px; } #st-c2 { top: 400px; }
+  </style>
+  <div id="root" data-composition-id="g-step" data-width="1080" data-height="1920">
+    <!-- "rasa lebih supportive, lebih confident nak melangkah" -->
+    <div id="st-box" class="clip" data-start="1.4" data-duration="2.77">
+      <div id="st-c1" class="chip"><span class="in" id="st-i1"><svg viewBox="0 0 76 76"><circle cx="38" cy="38" r="35" fill="#39ff14"/><path d="M20 39 L33 52 L57 26" fill="none" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tx">Lebih supportive</span></span></div>
+      <div id="st-c2" class="chip"><span class="in" id="st-i2"><svg viewBox="0 0 76 76"><circle cx="38" cy="38" r="35" fill="#39ff14"/><path d="M20 39 L33 52 L57 26" fill="none" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tx">Lebih confident</span></span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#st-i1", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 1.56);
+    tl.fromTo("#st-i2", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 2.86);
+    window.__timelines["g-step"] = tl;
+  </script>
+</template>

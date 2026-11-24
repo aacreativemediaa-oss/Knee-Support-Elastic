@@ -1,0 +1,46 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 100px; line-height: 1.02; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    #bd-a { top: 300px; } #bd-b { top: 270px; }
+    #bd-ol { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  </style>
+  <div id="root" data-composition-id="g-band" data-width="1080" data-height="1920">
+    <!-- "Versi yang terbaru ni," -->
+    <div id="bd-a" class="row t clip" data-start="0.16" data-duration="1.24"><span id="bd-a1" class="ln sh">Versi</span><span id="bd-a2" class="ln hl y">terbaru</span></div>
+    <!-- "dia ada elastic band kat bahagian kiri dan kanan tau" -->
+    <div id="bd-b" class="row t clip" data-start="1.42" data-duration="1.83"><span id="bd-b1" class="ln hl y">Elastic band</span><span id="bd-b2" class="ln sh">kiri &amp; kanan</span></div>
+    <!-- the elastic band strip, outlined in yellow and tracked to the product (footage 14.7–15.7 s = local 2.25–3.25, on "kiri dan kanan"; the 1.07 punch-in is baked into the coordinates) -->
+    <div id="bd-olc" class="clip" data-start="2.2" data-duration="1.05" data-layout-ignore>
+      <svg id="bd-ol" viewBox="0 0 1080 1920"><g id="bd-loop"><rect id="bd-rect" x="454" y="387" width="210" height="1331" rx="105" ry="105" pathLength="1"
+        fill="none" stroke="#ffc400" stroke-opacity="0.88" stroke-width="30" stroke-dasharray="1 1"/></g></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#bd-a1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 0.18);
+    tl.fromTo("#bd-a2", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.4);
+    tl.fromTo("#bd-a", { opacity: 1 }, { opacity: 0, duration: 0.15, ease: "power2.in", immediateRender: false }, 1.24);
+    tl.fromTo("#bd-b1", { opacity: 0, scaleX: 0.5 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "elastic.out(1, 0.5)" }, 1.46);
+    tl.fromTo("#bd-b2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 2.26);
+    // outline draws on at "elastic band" and follows the product (tracked offsets, px)
+    tl.fromTo("#bd-rect", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, 2.22);
+    tl.fromTo("#bd-loop", { x: 4, y: 30 }, { keyframes: [
+      { x: 0, y: -9, duration: 0.1, ease: "none" }, { x: 13, y: -4, duration: 0.2, ease: "none" }, { x: 0, y: 0, duration: 0.2, ease: "none" },
+      { x: -4, y: -6, duration: 0.2, ease: "none" }, { x: -11, y: -11, duration: 0.2, ease: "none" }, { x: -9, y: -34, duration: 0.2, ease: "none" }
+    ] }, 2.25);
+    window.__timelines["g-band"] = tl;
+  </script>
+</template>

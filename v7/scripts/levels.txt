@@ -1,0 +1,11 @@
+VO I=-29.6
+c01-intro L= -41.3 target=-56.6 gain=-15.3dB applied=-15.3dB vol=0.1718 result=-56.6
+c02-reveal L= -16.8 target=-56.6 gain=-39.8dB applied=-39.8dB vol=0.0102 result=-56.6
+c03-old L= -17.7 target=-56.6 gain=-38.9dB applied=-38.9dB vol=0.0114 result=-56.6
+c04-band L= -51.6 target=-56.6 gain=-5.0dB applied=-5.0dB vol=0.5623 result=-56.6
+c05-versi L= -70.0 target=-56.6 gain=+13.4dB applied=+12.0dB vol=3.9811 result=-58.0
+c06-step L= -23.4 target=-56.6 gain=-33.2dB applied=-33.2dB vol=0.0219 result=-56.6
+c07-spray L= -21.3 target=-56.6 gain=-35.3dB applied=-35.3dB vol=0.0172 result=-56.6
+c08-silicone L= -43.9 target=-56.6 gain=-12.7dB applied=-12.7dB vol=0.2317 result=-56.6
+c09-move L= -36.0 target=-56.6 gain=-20.6dB applied=-20.6dB vol=0.0933 result=-56.6
+c10-cta L= -48.8 target=-56.6 gain=-7.8dB applied=-7.8dB vol=0.4074 result=-56.6

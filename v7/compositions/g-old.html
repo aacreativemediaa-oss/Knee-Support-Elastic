@@ -1,0 +1,38 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 100px; line-height: 1.02; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    #od-t { top: 1000px; }
+    #od-strike { position: absolute; left: 230px; top: 1110px; width: 620px; height: 14px; background: #e0161b; border-radius: 7px; box-shadow: 0 0 0 4px #000; transform-origin: 0 50%; }
+    #od-x { position: absolute; left: 860px; top: 960px; width: 150px; height: 150px; }
+  </style>
+  <div id="root" data-composition-id="g-old" data-width="1080" data-height="1920">
+    <!-- "Yang ni bukan kain biasa yang lembik tu" -->
+    <div id="od-box" class="clip" data-start="0.28" data-duration="1.5">
+      <div id="od-t" class="row t"><span id="od-l1" class="ln sh">Bukan</span><span id="od-l2" class="ln hl">Kain biasa</span><span id="od-l3" class="ln sh y">yang lembik</span></div>
+      <div id="od-strike"></div>
+      <svg id="od-x" viewBox="0 0 150 150"><circle cx="75" cy="75" r="68" fill="#e0161b" stroke="#000" stroke-width="8"/><path d="M45 45 L105 105 M105 45 L45 105" stroke="#fff" stroke-width="18" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#od-l1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 0.3);
+    tl.fromTo("#od-l2", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.42);
+    tl.fromTo("#od-l3", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 1.08);
+    tl.fromTo("#od-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 1.12);
+    tl.fromTo("#od-x", { scale: 0, rotation: -40 }, { scale: 1, rotation: 0, duration: 0.3, ease: "back.out(2.2)" }, 1.16);
+    window.__timelines["g-old"] = tl;
+  </script>
+</template>
