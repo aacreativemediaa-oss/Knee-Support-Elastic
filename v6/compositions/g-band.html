@@ -14,17 +14,19 @@
     .sh { font-size: 47px; line-height: 1.15; }
     .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
       display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
-    #bd-a, #bd-b { top: 300px; }
-    #bd-m { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
-    #bd-arrw { position: absolute; left: 240px; top: 760px; width: 600px; height: 90px; }
+    #bd-a { top: 300px; } #bd-b { top: 228px; }
+    #bd-ol { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
   </style>
   <div id="root" data-composition-id="g-band" data-width="1080" data-height="1920">
     <!-- "Tapi kain dia special sikit" -->
     <div id="bd-a" class="row t clip" data-start="0.3" data-duration="1.36"><span id="bd-a1" class="ln sh">Tapi kain dia</span><span id="bd-a2" class="ln hl y">Special</span></div>
     <!-- "sebab dia ada elastic band dekat belah kiri dan kanan macam ni tau" -->
     <div id="bd-b" class="row t clip" data-start="1.7" data-duration="2.78"><span id="bd-b1" class="ln hl y">Elastic band</span><span id="bd-b2" class="ln sh">kiri &amp; kanan</span></div>
-    <!-- stretch arrow, pulled with the hands in the footage -->
-    <div id="bd-m" class="clip" data-start="0.3" data-duration="4.18"><div id="bd-arrw"><svg viewBox="0 0 600 90" preserveAspectRatio="none" style="width:600px;height:90px"><path d="M6 45 L76 6 V30 H524 V6 L594 45 L524 84 V60 H76 V84 Z" fill="#ffe600" stroke="#000" stroke-width="8" stroke-linejoin="round"/></svg></div></div>
+    <!-- the elastic band strip, outlined in yellow and tracked to the product (footage 14.7–15.85 s; the 1.07 punch-in is baked into the coordinates) -->
+    <div id="bd-olc" class="clip" data-start="2.2" data-duration="1.32" data-layout-ignore>
+      <svg id="bd-ol" viewBox="0 0 1080 1920"><g id="bd-loop"><rect id="bd-rect" x="454" y="387" width="210" height="1331" rx="105" ry="105" pathLength="1"
+        fill="none" stroke="#ffc400" stroke-opacity="0.88" stroke-width="30" stroke-dasharray="1 1"/></g></svg>
+    </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
@@ -33,9 +35,13 @@
     tl.fromTo("#bd-a", { opacity: 1 }, { opacity: 0, duration: 0.15, ease: "power2.in", immediateRender: false }, 1.5);
     tl.fromTo("#bd-b1", { opacity: 0, scaleX: 0.5 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "elastic.out(1, 0.5)" }, 2.24);
     tl.fromTo("#bd-b2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 3.28);
-    tl.fromTo("#bd-arrw", { scaleX: 0.35, opacity: 0 }, { scaleX: 0.7, opacity: 1, duration: 0.2, ease: "power2.out" }, 0.32);
-    tl.fromTo("#bd-arrw", { scaleX: 0.7 }, { keyframes: [{ scaleX: 1.12, duration: 0.45, ease: "power2.out" }, { scaleX: 0.75, duration: 0.4, ease: "elastic.out(1, 0.45)" }, { scaleX: 1.15, duration: 0.45, ease: "power2.out" }, { scaleX: 0.8, duration: 0.45, ease: "elastic.out(1, 0.45)" }], immediateRender: false }, 0.55);
-    tl.fromTo("#bd-arrw", { scaleX: 0.8 }, { keyframes: [{ scaleX: 1.2, duration: 0.3, ease: "power2.out" }, { scaleX: 0.9, duration: 0.45, ease: "elastic.out(1, 0.45)" }], immediateRender: false }, 2.26);
+    // outline draws on at "elastic band" and follows the product (tracked offsets, px)
+    tl.fromTo("#bd-rect", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, 2.22);
+    tl.fromTo("#bd-loop", { x: 4, y: 30 }, { keyframes: [
+      { x: 0, y: -9, duration: 0.1, ease: "none" }, { x: 13, y: -4, duration: 0.2, ease: "none" }, { x: 0, y: 0, duration: 0.2, ease: "none" },
+      { x: -4, y: -6, duration: 0.2, ease: "none" }, { x: -11, y: -11, duration: 0.2, ease: "none" }, { x: -9, y: -34, duration: 0.2, ease: "none" }
+    ] }, 2.25);
+    tl.fromTo("#bd-olc", { opacity: 1 }, { opacity: 0, duration: 0.1, ease: "none", immediateRender: false }, 3.4);
     window.__timelines["g-band"] = tl;
   </script>
 </template>

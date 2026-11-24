@@ -24,7 +24,7 @@ Pembetulan whisper: "bagian" → *bahagian*, "sizing cat" → *sizing chart*.
 | 2 | 3.90–6.36 | b091144 — berjalan | Lenguh sampai ke pinggang | **Overlay badan**: cahaya merah di lutut → garis naik → pinggang (label LUTUT / PINGGANG), vignet merah, gegaran |
 | 3 | 6.36–8.50 | v154525 6 s — tunjuk produk | Kena pakai knee support | Viewfinder pada *knee support* |
 | 4 | 8.50–10.37 | v203948 — support lama (hijau) terkulai di tangan | Bukan kain biasa yang lembek | sub "BUKAN" + headline "KAIN BIASA" + "YANG LEMBEK", garis pangkah merah + ikon ✗ |
-| 5 | 10.37–14.85 | lv202631 29 s — tangan meregang elastic band | Kain special… elastic band kiri kanan | "TAPI KAIN DIA / SPECIAL" → headline "ELASTIC BAND" + "kiri & kanan", anak panah ↔ meregang |
+| 5 | 10.37–14.85 | lv202631 12.45 s — produk depan, kemudian tekan jalur | Kain special… elastic band kiri kanan | "TAPI KAIN DIA / SPECIAL" → headline "ELASTIC BAND" + "kiri & kanan"; **garis kuning menyurih jalur elastic band** (sebelah kanan jam pasir, ikut rujukan), dilukis pada *elastic band* dan dijejak mengikut gerakan produk (12.62–13.8 s) |
 | 6 | 14.85–17.05 | v225323 — **baru vs lama** | Lebih fleksibel daripada version lama | sub "LEBIH" + headline "FLEKSIBEL" + "daripada version lama", chip BARU ✓ / LAMA, sisi lama dimalapkan |
 | 7 | 17.05–19.72 | v154525 1.4 s — dilipat lalu kembali tegak | Lipat… kembali ke bentuk asal | Ikon ↻ berputar, "LIPAT PUN / KEMBALI KE / BENTUK ASAL" |
 | 8 | 19.72–24.40 | lv151319 30.4 s — squat → high-knees | Berjalan… lebih supportive, lebih confident | Cip ✓ LEBIH SUPPORTIVE / ✓ LEBIH CONFIDENT |
