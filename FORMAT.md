@@ -1,16 +1,21 @@
 # Format video (terkini — guna untuk tugasan seterusnya)
 
-Dikemas kini 2026-11-22. Video sedia ada (v1–v5) tidak diubah.
+Dikemas kini 2026-11-26. Video sedia ada (v1–v7) tidak diubah.
 
 ## Saiz teks
 
 | Tulisan | Sebelum | Sekarang |
 | --- | --- | --- |
-| Headline | 150px | **100px** |
+| Headline | 100px | **85px** — sebaris; 2 baris hanya jika tak muat |
 | Sub-headline / pelekat save | 70px | **47px** |
 | Caption | 60px | **40px** |
 | Nombor heart rate | 96px | **64px** |
 | Chip, nama warna, label zon | 28px | **19px** |
+
+## Kedudukan (2026-11-26)
+
+- **Caption:** y = **1450px** (tengah, dari atas kanvas 1920).
+- **Headline:** dinaikkan sedikit, tetapi kekal dalam zon selamat TikTok — bahagian atas teks tidak lebih tinggi dari **y = 250px** (zon selamat atas TikTok bermula ≈ 240px; tepi kiri/kanan 120–960px).
 
 ## Format asas (kekal)
 
