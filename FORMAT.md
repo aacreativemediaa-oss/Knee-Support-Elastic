@@ -14,7 +14,7 @@ Dikemas kini 2026-11-26. Video sedia ada (v1–v7) tidak diubah.
 
 ## Kedudukan (2026-11-26)
 
-- **Caption:** y = **1500px** (tengah, dari atas kanvas 1920).
+- **Caption:** y = **1300px** (tengah, dari atas kanvas 1920).
 - **Headline:** dinaikkan sedikit, tetapi kekal dalam zon selamat TikTok — bahagian atas teks tidak lebih tinggi dari **y = 250px** (zon selamat atas TikTok bermula ≈ 240px; tepi kiri/kanan 120–960px).
 
 ## Format asas (kekal)
