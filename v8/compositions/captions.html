@@ -1,0 +1,43 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .cap { position: absolute; left: 0; width: 1080px; top: 1277px; text-align: center; overflow: visible; }
+    .cap .in { display: inline-block; font-family: "Anton", sans-serif; font-size: 40px; line-height: 1.15;
+      text-transform: uppercase; color: #fff; letter-spacing: 1px;
+      -webkit-text-stroke: 6px #000; paint-order: stroke fill;
+      text-shadow: 0 3px 0 rgba(0,0,0,.55); }
+    .cap .w { display: inline-block; }
+    .cap .w.k { color: #39ff14; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1080" data-height="1920" data-layout-allow-caption-zone>
+    <div id="cap01" class="cap clip" data-start="2.77" data-duration="0.47"><div class="in" id="cap01i"><span id="cap01w0" class="w">KORANG</span> <span id="cap01w1" class="w">KENA</span> <span id="cap01w2" class="w">PAKAI</span></div></div>
+    <div id="cap02" class="cap clip" data-start="3.24" data-duration="0.32"><div class="in" id="cap02i"><span id="cap02w0" class="w k">KNEE</span> <span id="cap02w1" class="w k">SUPPORT</span></div></div>
+    <div id="cap03" class="cap clip" data-start="3.56" data-duration="0.94"><div class="in" id="cap03i"><span id="cap03w0" class="w">MACAM</span> <span id="cap03w1" class="w">NI</span> <span id="cap03w2" class="w">TAU</span></div></div>
+    <div id="cap04" class="cap clip" data-start="10.5" data-duration="0.6"><div class="in" id="cap04i"><span id="cap04w0" class="w">SO</span> <span id="cap04w1" class="w">BILA</span></div></div>
+    <div id="cap05" class="cap clip" data-start="11.1" data-duration="0.3"><div class="in" id="cap05i"><span id="cap05w0" class="w">KORANG</span> <span id="cap05w1" class="w">NAIK</span></div></div>
+    <div id="cap06" class="cap clip" data-start="11.4" data-duration="0.74"><div class="in" id="cap06i"><span id="cap06w0" class="w k">TANGGA</span> <span id="cap06w1" class="w">TU</span></div></div>
+    <div id="cap07" class="cap clip" data-start="14.22" data-duration="1.18"><div class="in" id="cap07i"><span id="cap07w0" class="w">SO</span> <span id="cap07w1" class="w">LEPAS</span> <span id="cap07w2" class="w">NI</span></div></div>
+    <div id="cap08" class="cap clip" data-start="18.1" data-duration="0.6"><div class="in" id="cap08i"><span id="cap08w0" class="w">DAN</span> <span id="cap08w1" class="w">KORANG</span></div></div>
+    <div id="cap09" class="cap clip" data-start="18.7" data-duration="0.84"><div class="in" id="cap09i"><span id="cap09w0" class="w">JANGAN</span> <span id="cap09w1" class="w k">RISAU</span></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const groups = [{"id":"cap01","s":2.77,"words":[{"el":"#cap01w0","s":2.81,"k":false},{"el":"#cap01w1","s":2.92,"k":false},{"el":"#cap01w2","s":3.06,"k":false}]},{"id":"cap02","s":3.24,"words":[{"el":"#cap02w0","s":3.28,"k":true},{"el":"#cap02w1","s":3.42,"k":true}]},{"id":"cap03","s":3.56,"words":[{"el":"#cap03w0","s":3.6,"k":false},{"el":"#cap03w1","s":3.86,"k":false},{"el":"#cap03w2","s":4.08,"k":false}]},{"id":"cap04","s":10.5,"words":[{"el":"#cap04w0","s":10.54,"k":false},{"el":"#cap04w1","s":10.94,"k":false}]},{"id":"cap05","s":11.1,"words":[{"el":"#cap05w0","s":11.14,"k":false},{"el":"#cap05w1","s":11.34,"k":false}]},{"id":"cap06","s":11.4,"words":[{"el":"#cap06w0","s":11.44,"k":true},{"el":"#cap06w1","s":11.74,"k":false}]},{"id":"cap07","s":14.22,"words":[{"el":"#cap07w0","s":14.26,"k":false},{"el":"#cap07w1","s":14.66,"k":false},{"el":"#cap07w2","s":14.96,"k":false}]},{"id":"cap08","s":18.1,"words":[{"el":"#cap08w0","s":18.14,"k":false},{"el":"#cap08w1","s":18.54,"k":false}]},{"id":"cap09","s":18.7,"words":[{"el":"#cap09w0","s":18.74,"k":false},{"el":"#cap09w1","s":18.82,"k":true}]}];
+    groups.forEach((g) => {
+      tl.fromTo("#" + g.id + "i", { scale: 0.82, y: 10 }, { scale: 1, y: 0, duration: 0.16, ease: "back.out(2)", immediateRender: false }, g.s);
+      g.words.forEach((w, i) => {
+        // active word: yellow (keywords stay neon green and get a small pop)
+        if (w.k) {
+          tl.fromTo(w.el, { scale: 1 }, { scale: 1.12, duration: 0.08, ease: "power2.out", immediateRender: false }, w.s);
+          tl.to(w.el, { scale: 1, duration: 0.12, ease: "power2.in" }, w.s + 0.16);
+        } else {
+          tl.set(w.el, { color: "#ffe600" }, w.s);
+          const nx = g.words[i + 1];
+          if (nx) tl.set(w.el, { color: "#ffffff" }, nx.s);
+        }
+      });
+    });
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

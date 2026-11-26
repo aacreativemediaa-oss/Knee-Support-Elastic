@@ -1,0 +1,11 @@
+VO I=-29.5
+c01-pain L= -38.4 target=-56.5 gain=-18.1dB applied=-18.1dB vol=0.1245 result=-56.5
+c02-reveal L= -16.8 target=-56.5 gain=-39.7dB applied=-39.7dB vol=0.0104 result=-56.5
+c03-versi L= -70.0 target=-56.5 gain=+13.5dB applied=+12.0dB vol=3.9811 result=-58.0
+c04-band L= -51.1 target=-56.5 gain=-5.4dB applied=-5.4dB vol=0.5370 result=-56.5
+c05-step L= -34.0 target=-56.5 gain=-22.5dB applied=-22.5dB vol=0.0750 result=-56.5
+c06-jump L= -35.6 target=-56.5 gain=-20.9dB applied=-20.9dB vol=0.0902 result=-56.5
+c07-wear L= -30.1 target=-56.5 gain=-26.4dB applied=-26.4dB vol=0.0479 result=-56.5
+c08-spray L= -21.3 target=-56.5 gain=-35.2dB applied=-35.2dB vol=0.0174 result=-56.5
+c09-walk L= -21.5 target=-56.5 gain=-35.0dB applied=-35.0dB vol=0.0178 result=-56.5
+c10-cta L= -48.6 target=-56.5 gain=-7.9dB applied=-7.9dB vol=0.4027 result=-56.5

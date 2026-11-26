@@ -1,0 +1,41 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 9px #000; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-22): headline 100px, sub-headline / sticker 47px, chip & label 19px */
+    .hl { font-size: 85px; line-height: 1.05; white-space: nowrap; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    #bd-b { top: 270px; }
+    #bd-ol { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  </style>
+  <div id="root" data-composition-id="g-band" data-width="1080" data-height="1920">
+    <!-- "tapi dia ada elastic band dekat belah kiri dan kanan ni" -->
+    <div id="bd-b" class="row t clip" data-start="0.68" data-duration="2.07"><span id="bd-b1" class="ln hl y">Elastic band</span><span id="bd-b2" class="ln sh">kiri &amp; kanan</span></div>
+    <!-- the elastic band strip, outlined in yellow and tracked to the product (footage 14.7–15.74 s = local 1.71–2.75, on "kiri dan kanan"; the 1.07 punch-in is baked into the coordinates) -->
+    <div id="bd-olc" class="clip" data-start="1.66" data-duration="1.09" data-layout-ignore>
+      <svg id="bd-ol" viewBox="0 0 1080 1920"><g id="bd-loop"><rect id="bd-rect" x="454" y="387" width="210" height="1331" rx="105" ry="105" pathLength="1"
+        fill="none" stroke="#ffc400" stroke-opacity="0.88" stroke-width="30" stroke-dasharray="1 1"/></g></svg>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#bd-b1", { opacity: 0, scaleX: 0.5 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "elastic.out(1, 0.5)" }, 0.7);
+    tl.fromTo("#bd-b2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 1.6);
+    // outline draws on at "elastic band" and follows the product (tracked offsets, px)
+    tl.fromTo("#bd-rect", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, 1.68);
+    tl.fromTo("#bd-loop", { x: 4, y: 30 }, { keyframes: [
+      { x: 0, y: -9, duration: 0.1, ease: "none" }, { x: 13, y: -4, duration: 0.2, ease: "none" }, { x: 0, y: 0, duration: 0.2, ease: "none" },
+      { x: -4, y: -6, duration: 0.2, ease: "none" }, { x: -11, y: -11, duration: 0.2, ease: "none" }, { x: -9, y: -34, duration: 0.2, ease: "none" }
+    ] }, 1.71);
+    window.__timelines["g-band"] = tl;
+  </script>
+</template>

@@ -1,0 +1,45 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin.woff2") format("woff2"); font-weight: 400; }
+    #root { position: absolute; inset: 0; pointer-events: none; --k: 0.7; }
+    .t { font-family: "Anton", sans-serif; text-transform: uppercase; color: #fff; line-height: 1.04; letter-spacing: 1px;
+      -webkit-text-stroke: 8px #000; paint-order: stroke fill; text-shadow: 0 5px 0 rgba(0,0,0,.55); }
+    .y { color: #ffe600; } .g { color: #39ff14; }
+    .lbl { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .row { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .ln { display: block; }
+    .ib { display: inline-block; }
+    /* format (2026-11-26): headline 85px one line (two only if it does not fit), sub-headline / sticker 47px,
+       chip & label 19px, counter numbers 64px; headline top >= 250px (TikTok safe zone) */
+    .hl { font-size: 85px; line-height: 1.05; white-space: nowrap; }
+    .sh { font-size: 47px; line-height: 1.15; }
+    .num { font-family: "Anton", sans-serif; font-size: 64px; line-height: 1; }
+    .chip19 { font-family: "Montserrat", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 19px;
+      display: inline-block; padding: 6px 14px; border-radius: 8px; border: 3px solid #000; }
+    .chip { position: absolute; left: 0; width: 1080px; text-align: center; }
+    .chip .in { display: inline-flex; align-items: center; gap: 14px; background: rgba(10,10,14,.84); border: 4px solid #39ff14; border-radius: 999px; padding: 6px 30px 8px 16px; box-shadow: 0 6px 0 rgba(0,0,0,.45); }
+    .chip .in.w { border-color: #fff; }
+    .chip .tx { font-family: "Anton", sans-serif; font-size: 47px; color: #fff; text-transform: uppercase; line-height: 1.15; }
+    .chip svg { width: 54px; height: 54px; flex: none; }
+    #br-c1 { top: 270px; } #br-c2 { top: 350px; } #br-c3 { top: 450px; }
+    #br-h { position: absolute; left: 0; width: 1080px; top: 568px; text-align: center; }
+    #br-hi { background: #ffe600; color: #111; }
+  </style>
+  <div id="root" data-composition-id="g-breath" data-width="1080" data-height="1920">
+    <!-- "Sangat breathable, sangat selesa, tak rasa panas walaupun korang pakai lama" (the spray comes straight through the knit) -->
+    <div id="br-box" class="clip" data-start="0.28" data-duration="3.82">
+      <div id="br-c1" class="chip"><span class="in" id="br-i1"><svg viewBox="0 0 84 84"><g fill="none" stroke="#39ff14" stroke-width="8" stroke-linecap="round"><path d="M8 26 C22 14 34 38 48 26 S70 14 78 22"/><path d="M8 46 C22 34 34 58 48 46 S70 34 78 42"/><path d="M8 66 C22 54 34 78 48 66 S70 54 78 62"/></g></svg><span class="tx">Sangat breathable</span></span></div>
+      <div id="br-c2" class="chip"><span class="in w" id="br-i2"><svg viewBox="0 0 76 76"><circle cx="38" cy="38" r="35" fill="#39ff14"/><path d="M20 39 L33 52 L57 26" fill="none" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tx">Sangat selesa</span></span></div>
+      <div id="br-c3" class="chip"><span class="in w" id="br-i3"><svg viewBox="0 0 76 76"><circle cx="38" cy="38" r="35" fill="#39ff14"/><path d="M20 39 L33 52 L57 26" fill="none" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="tx">Tak rasa panas</span></span></div>
+      <div id="br-h"><span id="br-hi" class="chip19">Walaupun pakai lama</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#br-i1", { scaleX: 0.3, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.35, ease: "elastic.out(1, 0.55)" }, 0.3);
+    tl.fromTo("#br-i2", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 1.22);
+    tl.fromTo("#br-i3", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, 2.22);
+    tl.fromTo("#br-hi", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, 2.94);
+    window.__timelines["g-breath"] = tl;
+  </script>
+</template>
