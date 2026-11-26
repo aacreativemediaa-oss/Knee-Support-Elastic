@@ -36,3 +36,11 @@ Pembetulan whisper: "lima nak tangga" → *lima anak tangga*; "ni support" → *
 - `hyperframes check`: 0 ralat.
 - Amaran dikekalkan dengan sengaja: caption pada y = 1300 di bawah tepi zon selamat (ikut format); headline/chip di tepi atas zon Reels/Shorts (zon TikTok dipatuhi); chip/label 19px di bawah lantai bacaan 28px (ikut format); klip 3 senyap; caption & CTA dalam satu fail.
 - Snapshot setiap babak disemak.
+
+## Hasil render (diukur)
+
+- `v8/renders/knee-support-elastic-v8_1080x1920_60fps.mp4`: H.264 1080×1920, 60/1 fps, 40.40 s, AAC 48 kHz, **65.8 MB**.
+- VO vs asal: offset **0 sampel**, gain **0.9954 (−0.04 dB)** → selari & 100 %.
+- Loudness: VO −29.5 LUFS (short-term maks −28.2); stem SFX + footage −36.7 LUFS (short-term maks −36.1) ≈ 8 dB di bawah VO.
+- Frame dari fail render (0, 1.3, 2.61 kilatan, 3.5, 6.5, 10.3, 13.3, 17.6, 21.6, 25.5, 31.7, 33.6, 36.5, 40.38 akhir) disemak.
+- Bunyi diukur, bukan didengar.
